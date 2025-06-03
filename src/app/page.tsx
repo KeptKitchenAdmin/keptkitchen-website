@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -113,20 +114,32 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="container mx-auto">
+      <section className="relative pt-32 pb-20 px-6 min-h-[80vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/1.jpg"
+            alt="Premium culinary experience"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
+        </div>
+        <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[var(--black)] mb-6 leading-[1.1] tracking-tight">
-              Your chef,
-              <span className="block text-walnut">your kitchen.</span>
-            </h1>
-            <p className="text-xl text-[var(--charcoal)] mb-10 max-w-xl mx-auto font-light">
-              Effortless nourishment for your lifestyle.
-              Seasonal, sustainable, and always delicious.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Explore How It Works</button>
-              <button className="btn-secondary">Book a Consultation</button>
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-12 md:p-16 shadow-2xl border border-white/20">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-deep-charcoal mb-6 leading-[1.1] tracking-tight">
+                Your chef,
+                <span className="block text-walnut">your kitchen.</span>
+              </h1>
+              <p className="text-xl text-charcoal mb-10 max-w-xl mx-auto font-light">
+                Effortless nourishment for your lifestyle.
+                Seasonal, sustainable, and always delicious.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="btn-primary">Explore How It Works</button>
+                <button className="btn-secondary">Book a Consultation</button>
+              </div>
             </div>
           </div>
         </div>
@@ -254,16 +267,31 @@ export default function Home() {
                 seasonal cooking that respects your time and your taste.
               </p>
             </div>
-            <div className="relative bg-gradient-to-br from-beige to-maple/30 aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-t from-walnut/20 to-transparent"></div>
+            <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/2.jpg"
+                alt="Chef preparing elegant cuisine"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-[var(--taupe)] relative">
-        <div className="container mx-auto px-6 scroll-fade-in">
+      <section id="testimonials" className="py-20 relative">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/3.jpg"
+            alt="Elegant dining setup"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-taupe/95"></div>
+        </div>
+        <div className="container mx-auto px-6 scroll-fade-in relative z-10">
           <h2 className="text-4xl md:text-5xl font-serif text-center text-[var(--black)] mb-16">
             What Our Clients Say
           </h2>

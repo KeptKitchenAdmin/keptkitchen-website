@@ -177,10 +177,10 @@ export default function Home() {
               </h2>
               <p className="text-[var(--charcoal)] mb-6">
                 At Kept Kitchen Co., we believe that exceptional food is about more than just ingredients. 
-                It's about the care, creativity, and passion that goes into every dish.
+                It&apos;s about the care, creativity, and passion that goes into every dish.
               </p>
               <p className="text-[var(--charcoal)] mb-6">
-                Our chefs bring years of experience from the world's finest kitchens to your home, 
+                Our chefs bring years of experience from the world&apos;s finest kitchens to your home, 
                 creating personalized culinary experiences that reflect your tastes and lifestyle.
               </p>
               <p className="text-[var(--charcoal)]">
@@ -203,7 +203,7 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-[var(--white)] p-8 rounded-lg shadow-sm transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1">
                 <p className="text-[var(--charcoal)] mb-6 italic">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div>
                   <p className="font-serif text-[var(--black)] text-lg">{testimonial.name}</p>
@@ -259,7 +259,7 @@ export default function Home() {
             Ready to Elevate Your Dining?
           </h2>
           <p className="text-xl text-[var(--charcoal)] mb-10 max-w-2xl mx-auto">
-            Let's discuss how Kept Kitchen Co. can transform your home dining experience.
+            Let&apos;s discuss how Kept Kitchen Co. can transform your home dining experience.
           </p>
           <button className="btn-primary">Schedule a Consultation</button>
         </div>

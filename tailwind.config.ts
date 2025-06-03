@@ -13,8 +13,13 @@ const config: Config = {
         beige: 'var(--beige)',
         taupe: 'var(--taupe)',
         'warm-gray': 'var(--warm-gray)',
+        'soft-gray': 'var(--soft-gray)',
+        walnut: 'var(--walnut)',
+        oak: 'var(--oak)',
+        maple: 'var(--maple)',
         charcoal: 'var(--charcoal)',
         black: 'var(--black)',
+        'deep-charcoal': 'var(--deep-charcoal)',
         'soft-white': 'var(--soft-white)',
       },
       fontFamily: {

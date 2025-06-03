@@ -10,10 +10,17 @@
   --beige: #F5EFE7;
   --taupe: #E8DFD3;
   --warm-gray: #D4C9BD;
+  --soft-gray: #F0EFED;
+  
+  /* Warm Wood Tones */
+  --walnut: #8B6F47;
+  --oak: #C8A882;
+  --maple: #E5D4B1;
   
   /* Dark Accents */
   --charcoal: #2C2C2C;
   --black: #1A1A1A;
+  --deep-charcoal: #191919;
   
   /* Supporting Colors */
   --white: #FFFFFF;
@@ -61,17 +68,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
 
 h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.01em;
+  font-weight: 400;
 }
 
 p {
@@ -96,41 +107,45 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--charcoal);
+  background: var(--deep-charcoal);
   color: var(--white);
-  padding: 1rem 2rem;
+  padding: 1.125rem 2.5rem;
   border: none;
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary:hover {
   background: var(--black);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--charcoal);
-  padding: 1rem 2rem;
-  border: 1px solid var(--charcoal);
+  padding: 1.125rem 2.5rem;
+  border: 1px solid var(--warm-gray);
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
 }
 
 .btn-secondary:hover {
-  background: var(--charcoal);
-  color: var(--white);
+  background: var(--soft-gray);
+  color: var(--deep-charcoal);
+  border-color: var(--soft-gray);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
@@ -174,12 +189,32 @@ a:hover {
 .scroll-fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Subtle design accents */
+.subtle-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow-elegant {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--oak);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--oak);
+  color: var(--white);
 }
 
 /* Button animations */

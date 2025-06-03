@@ -69,7 +69,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--soft-white)] backdrop-blur-sm bg-opacity-95">
         <div className="container mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-serif text-[var(--black)]">
+            <div className="text-2xl font-serif text-[var(--black)] tracking-wide">
               Kept Kitchen Co.
             </div>
             
@@ -79,7 +79,7 @@ export default function Home() {
               <a href="#about" className="text-[var(--charcoal)] hover:opacity-70 transition-opacity">About</a>
               <a href="#testimonials" className="text-[var(--charcoal)] hover:opacity-70 transition-opacity">Testimonials</a>
               <a href="#faq" className="text-[var(--charcoal)] hover:opacity-70 transition-opacity">FAQ</a>
-              <button className="btn-primary">Get Started</button>
+              <button className="btn-primary">Discover Your Menu</button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -105,7 +105,7 @@ export default function Home() {
                 <a href="#about" className="text-[var(--charcoal)]">About</a>
                 <a href="#testimonials" className="text-[var(--charcoal)]">Testimonials</a>
                 <a href="#faq" className="text-[var(--charcoal)]">FAQ</a>
-                <button className="btn-primary w-full">Get Started</button>
+                <button className="btn-primary w-full">Discover Your Menu</button>
               </div>
             </div>
           )}
@@ -116,17 +116,17 @@ export default function Home() {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[var(--black)] mb-6 leading-tight">
-              Elevate Your
-              <span className="block">Home Dining</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[var(--black)] mb-6 leading-[1.1] tracking-tight">
+              Your chef,
+              <span className="block text-walnut">your kitchen.</span>
             </h1>
-            <p className="text-xl text-[var(--charcoal)] mb-10 max-w-2xl mx-auto">
-              Experience the luxury of a private chef. Exceptional cuisine, 
-              personalized menus, and impeccable service in the comfort of your home.
+            <p className="text-xl text-[var(--charcoal)] mb-10 max-w-xl mx-auto font-light">
+              Effortless nourishment for your lifestyle.
+              Seasonal, sustainable, and always delicious.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Book Your Chef</button>
-              <button className="btn-secondary">Learn More</button>
+              <button className="btn-primary">Explore How It Works</button>
+              <button className="btn-secondary">Book a Consultation</button>
             </div>
           </div>
         </div>
@@ -135,33 +135,100 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-[var(--cream)]">
         <div className="container mx-auto px-6 scroll-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif text-center text-[var(--black)] mb-16">
-            Our Services
+          <h2 className="text-4xl md:text-5xl font-serif text-center text-[var(--black)] mb-4">
+            Crafted Just for You
           </h2>
+          <p className="text-center text-[var(--charcoal)] max-w-2xl mx-auto mb-16 font-light">
+            A new, custom menu every week. Locally sourced, globally inspired.
+          </p>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg rounded-lg">
-              <div className="w-20 h-20 bg-[var(--taupe)] rounded-full mx-auto mb-6"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-maple to-oak rounded-full mx-auto mb-6 shadow-sm"></div>
               <h3 className="text-2xl font-serif text-[var(--black)] mb-4">Weekly Service</h3>
-              <p className="text-[var(--charcoal)]">
-                Regular meal preparation tailored to your schedule and preferences. 
-                Fresh, healthy meals ready when you are.
+              <p className="text-[var(--charcoal)] font-light">
+                Custom menus that evolve with the seasons,
+                your tastes, and your goals.
               </p>
             </div>
             <div className="text-center p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg rounded-lg">
-              <div className="w-20 h-20 bg-[var(--taupe)] rounded-full mx-auto mb-6"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-oak to-walnut/50 rounded-full mx-auto mb-6 shadow-sm"></div>
               <h3 className="text-2xl font-serif text-[var(--black)] mb-4">Dinner Parties</h3>
-              <p className="text-[var(--charcoal)]">
-                Impress your guests with restaurant-quality cuisine and professional service. 
-                Perfect for intimate gatherings.
+              <p className="text-[var(--charcoal)] font-light">
+                Entertain effortlessly while your chef
+                handles every delicious detail.
               </p>
             </div>
             <div className="text-center p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg rounded-lg">
-              <div className="w-20 h-20 bg-[var(--taupe)] rounded-full mx-auto mb-6"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-walnut/40 to-oak rounded-full mx-auto mb-6 shadow-sm"></div>
               <h3 className="text-2xl font-serif text-[var(--black)] mb-4">Special Events</h3>
-              <p className="text-[var(--charcoal)]">
-                From anniversaries to celebrations, make every occasion memorable 
-                with customized menus and exceptional service.
+              <p className="text-[var(--charcoal)] font-light">
+                Milestone moments deserve menus
+                as memorable as the occasion.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-20 px-6 bg-soft-gray">
+        <div className="container mx-auto scroll-fade-in">
+          <h2 className="text-4xl md:text-5xl font-serif text-center text-[var(--black)] mb-4">
+            This Isn&apos;t Meal Prep
+          </h2>
+          <p className="text-center text-[var(--charcoal)] max-w-2xl mx-auto mb-16 font-light">
+            Experience the difference a decade of culinary expertise makes.
+          </p>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div>
+              <h3 className="text-2xl font-serif text-walnut mb-6">Kept Kitchen Co.</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-walnut rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-[var(--charcoal)] font-light">Chefs with 10+ years of fine dining experience</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-walnut rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-[var(--charcoal)] font-light">Custom menus created weekly for your household</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-walnut rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-[var(--charcoal)] font-light">Local, organic, seasonal ingredients</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-walnut rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-[var(--charcoal)] font-light">Elegant glass storage, no plastic waste</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-walnut rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-[var(--charcoal)] font-light">Full service: shopping, cooking, cleanup</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-serif text-warm-gray mb-6">Typical Meal Prep</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-warm-gray rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-warm-gray font-light">Home cooks or culinary students</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-warm-gray rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-warm-gray font-light">Fixed menu options, limited customization</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-warm-gray rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-warm-gray font-light">Mass-sourced ingredients</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-warm-gray rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-warm-gray font-light">Single-use plastic containers</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 bg-warm-gray rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <p className="text-warm-gray font-light">Drop-off only, no full service</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -173,22 +240,23 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div>
               <h2 className="text-4xl md:text-5xl font-serif text-[var(--black)] mb-6">
-                Crafted with Care
+                Real Chefs. Real Solutions.
               </h2>
-              <p className="text-[var(--charcoal)] mb-6">
-                At Kept Kitchen Co., we believe that exceptional food is about more than just ingredients. 
-                It&apos;s about the care, creativity, and passion that goes into every dish.
+              <p className="text-lg text-[var(--charcoal)] mb-6 font-light leading-relaxed">
+                A decade of experience meets the intimacy of home.
               </p>
-              <p className="text-[var(--charcoal)] mb-6">
-                Our chefs bring years of experience from the world&apos;s finest kitchens to your home, 
-                creating personalized culinary experiences that reflect your tastes and lifestyle.
+              <p className="text-[var(--charcoal)] mb-6 font-light">
+                Our chefs aren&apos;t hobbyists or meal-preppers. They&apos;re seasoned professionals
+                who bring restaurant excellence to your kitchen—without the restaurant markup.
               </p>
-              <p className="text-[var(--charcoal)]">
-                From sourcing the freshest local ingredients to presenting each plate with artistic precision, 
-                we handle every detail so you can savor the moment.
+              <p className="text-[var(--charcoal)] font-light">
+                No single-use plastic. No mass-produced meals. Just thoughtful,
+                seasonal cooking that respects your time and your taste.
               </p>
             </div>
-            <div className="bg-[var(--beige)] aspect-[4/5] rounded-lg"></div>
+            <div className="relative bg-gradient-to-br from-beige to-maple/30 aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-walnut/20 to-transparent"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -261,7 +329,7 @@ export default function Home() {
           <p className="text-xl text-[var(--charcoal)] mb-10 max-w-2xl mx-auto">
             Let&apos;s discuss how Kept Kitchen Co. can transform your home dining experience.
           </p>
-          <button className="btn-primary">Schedule a Consultation</button>
+          <button className="btn-primary">Schedule Your Consultation</button>
         </div>
       </section>
 

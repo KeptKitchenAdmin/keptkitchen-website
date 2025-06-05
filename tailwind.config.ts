@@ -9,17 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: 'var(--cream)',
-        beige: 'var(--beige)',
-        taupe: 'var(--taupe)',
-        'warm-gray': 'var(--warm-gray)',
-        'soft-gray': 'var(--soft-gray)',
-        walnut: 'var(--walnut)',
-        oak: 'var(--oak)',
-        maple: 'var(--maple)',
+        bone: 'var(--bone)',
+        ivory: 'var(--ivory)',
+        sand: 'var(--sand)',
+        espresso: 'var(--espresso)',
         charcoal: 'var(--charcoal)',
+        'warm-taupe': 'var(--warm-taupe)',
+        clay: 'var(--clay)',
+        'muted-gold': 'var(--muted-gold)',
+        'deep-brown': 'var(--deep-brown)',
         black: 'var(--black)',
-        'deep-charcoal': 'var(--deep-charcoal)',
         'soft-white': 'var(--soft-white)',
       },
       fontFamily: {

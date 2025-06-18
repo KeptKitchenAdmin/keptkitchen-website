@@ -452,21 +452,21 @@ export default function SignUp() {
                   <label className="block text-sm font-medium text-charcoal mb-4">
                     Please check off all proteins that you enjoy
                   </label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
+                  <div className="space-y-3">
                     {[
                       'Chicken (light meat)', 'Chicken (dark meat)', 'Beef', 'Pork',
                       'Lamb', 'Duck', 'Tofu', 'Tempeh', 'Eggs', 'Turkey',
                       'Fish (salmon, tuna, white fish)', 'Shellfish (shrimp, scallops, clams)',
                       'Sausage', 'Beans/Legumes', 'Bison'
                     ].map((protein) => (
-                      <label key={protein} className="flex items-center">
+                      <label key={protein} className="flex items-start">
                         <input
                           type="checkbox"
                           name="proteins"
                           value={protein}
                           checked={formData.proteins.includes(protein)}
                           onChange={handleChange}
-                          className="mr-2"
+                          className="mr-3 mt-0.5"
                         />
                         <span className="text-sm text-charcoal">{protein}</span>
                       </label>

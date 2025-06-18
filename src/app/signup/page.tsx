@@ -104,10 +104,10 @@ export default function SignUp() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Name */}
                 <div>
-                  <h2 className="text-sm font-medium text-deep-charcoal mb-4">Name (required)</h2>
+                  <div className="text-sm font-medium text-charcoal mb-4">Name (required)</div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm text-charcoal mb-2">First Name</label>
+                      <label className="block text-sm font-medium text-charcoal mb-2">First Name</label>
                       <input
                         type="text"
                         name="firstName"
@@ -118,7 +118,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-charcoal mb-2">Last Name</label>
+                      <label className="block text-sm font-medium text-charcoal mb-2">Last Name</label>
                       <input
                         type="text"
                         name="lastName"
@@ -158,10 +158,10 @@ export default function SignUp() {
 
                 {/* Address */}
                 <div>
-                  <h2 className="text-sm font-medium text-deep-charcoal mb-4">Address (required)</h2>
+                  <div className="text-sm font-medium text-charcoal mb-4">Address (required)</div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm text-charcoal mb-2">Country</label>
+                      <label className="block text-sm font-medium text-charcoal mb-2">Country</label>
                       <input
                         type="text"
                         name="country"
@@ -171,7 +171,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-charcoal mb-2">Address Line 1 (required)</label>
+                      <label className="block text-sm font-medium text-charcoal mb-2">Address Line 1 (required)</label>
                       <input
                         type="text"
                         name="addressLine1"
@@ -182,7 +182,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-charcoal mb-2">Address Line 2</label>
+                      <label className="block text-sm font-medium text-charcoal mb-2">Address Line 2</label>
                       <input
                         type="text"
                         name="addressLine2"
@@ -193,7 +193,7 @@ export default function SignUp() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
-                        <label className="block text-sm text-charcoal mb-2">City (required)</label>
+                        <label className="block text-sm font-medium text-charcoal mb-2">City (required)</label>
                         <input
                           type="text"
                           name="city"
@@ -204,7 +204,7 @@ export default function SignUp() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm text-charcoal mb-2">State (required)</label>
+                        <label className="block text-sm font-medium text-charcoal mb-2">State (required)</label>
                         <input
                           type="text"
                           name="state"
@@ -215,7 +215,7 @@ export default function SignUp() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm text-charcoal mb-2">ZIP Code (required)</label>
+                        <label className="block text-sm font-medium text-charcoal mb-2">ZIP Code (required)</label>
                         <input
                           type="text"
                           name="zip"
@@ -231,7 +231,7 @@ export default function SignUp() {
 
                 {/* Preferred Service Frequency */}
                 <div>
-                  <h2 className="text-sm font-medium text-deep-charcoal mb-2">Preferred Service Frequency</h2>
+                  <div className="text-sm font-medium text-charcoal mb-2">Preferred Service Frequency</div>
                   <p className="text-sm text-charcoal mb-4">How many days per week would you like your meals prepared?</p>
                   <div className="space-y-3">
                     <label className="flex items-start">
@@ -243,7 +243,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Once per week (most common)</span>
+                      <span className="text-sm text-charcoal">Once per week (most common)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -254,7 +254,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Twice per week (split service – higher volume or freshness)</span>
+                      <span className="text-sm text-charcoal">Twice per week (split service – higher volume or freshness)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -265,7 +265,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Not sure yet – I&apos;d like to discuss options</span>
+                      <span className="text-sm text-charcoal">Not sure yet – I&apos;d like to discuss options</span>
                     </label>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default function SignUp() {
                           onChange={handleChange}
                           className="mr-2"
                         />
-                        <span className="text-charcoal">{day}</span>
+                        <span className="text-sm text-charcoal">{day}</span>
                       </label>
                     ))}
                   </div>
@@ -326,7 +326,7 @@ export default function SignUp() {
 
                 {/* Weekly Meal Quantity */}
                 <div>
-                  <h2 className="text-sm font-medium text-deep-charcoal mb-2">Weekly Meal Quantity</h2>
+                  <div className="text-sm font-medium text-charcoal mb-2">Weekly Meal Quantity</div>
                   <p className="text-sm text-charcoal mb-4">
                     How many entrees (2 portions each) and add-ons do you anticipate ordering per week?
                   </p>
@@ -340,7 +340,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">3 Entrees (6 portions)</span>
+                      <span className="text-sm text-charcoal">3 Entrees (6 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -351,7 +351,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">4 Entrees (8 portions)</span>
+                      <span className="text-sm text-charcoal">4 Entrees (8 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -362,7 +362,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">5 Entrees (10 portions)</span>
+                      <span className="text-sm text-charcoal">5 Entrees (10 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -373,7 +373,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">6 Entrees (12 portions – available only for split service)</span>
+                      <span className="text-sm text-charcoal">6 Entrees (12 portions – available only for split service)</span>
                     </label>
                     <label className="flex items-center mt-4">
                       <input
@@ -383,7 +383,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mr-3"
                       />
-                      <span className="text-charcoal">Breakfast Add-On (4 or 6 servings)</span>
+                      <span className="text-sm text-charcoal">Breakfast Add-On (4 or 6 servings)</span>
                     </label>
                   </div>
                 </div>
@@ -468,7 +468,7 @@ export default function SignUp() {
                           onChange={handleChange}
                           className="mr-2"
                         />
-                        <span className="text-charcoal">{protein}</span>
+                        <span className="text-sm text-charcoal">{protein}</span>
                       </label>
                     ))}
                   </div>
@@ -509,7 +509,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Yes, all of them please</span>
+                      <span className="text-sm text-charcoal">Yes, all of them please</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -520,7 +520,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Some of them is fine</span>
+                      <span className="text-sm text-charcoal">Some of them is fine</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -531,7 +531,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-charcoal">Nope, I&apos;d like some meat in all of them!</span>
+                      <span className="text-sm text-charcoal">Nope, I&apos;d like some meat in all of them!</span>
                     </label>
                   </div>
                 </div>

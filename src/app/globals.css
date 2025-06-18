@@ -5,26 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Warm Neutrals */
-  --cream: #FAF7F2;
-  --beige: #F5EFE7;
-  --taupe: #E8DFD3;
-  --warm-gray: #D4C9BD;
-  --soft-gray: #F0EFED;
+  /* Primary Colors */
+  --ivory: #f4efe8;
+  --espresso: #2e2a27;
+  --bone: #e8e1d8;
   
-  /* Warm Wood Tones */
-  --walnut: #8B6F47;
-  --oak: #C8A882;
-  --maple: #E5D4B1;
-  
-  /* Dark Accents */
-  --charcoal: #2C2C2C;
-  --black: #1A1A1A;
-  --deep-charcoal: #191919;
+  /* Accent Colors */
+  --taupe: #695441;
+  --clay: #c1aa90;
+  --deep-charcoal: #1d1915;
   
   /* Supporting Colors */
-  --white: #FFFFFF;
-  --soft-white: #FDFCFA;
+  --black: #000000;
+  --white: #ffffff;
+  
+  /* Additional neutral shades for depth */
+  --warm-taupe: #8b7355;
+  --muted-gold: #b59e7a;
+  --deep-brown: #1a1614;
+  --sand: #f7f3ee;
+  --soft-white: #fdfcfa;
   
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -51,8 +51,8 @@ html {
 }
 
 body {
-  background: var(--soft-white);
-  color: var(--charcoal);
+  background: var(--bone);
+  color: var(--espresso);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;

@@ -69,10 +69,62 @@ export default function SignUp() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json() as { success: boolean; error?: string }
+
+      if (result.success) {
+        setSubmitMessage('Thank you! Your service request has been submitted successfully. We will contact you soon.')
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          country: 'United States',
+          addressLine1: '',
+          addressLine2: '',
+          city: '',
+          state: '',
+          zip: '',
+          serviceFrequency: '',
+          startDate: '',
+          householdInfo: '',
+          idealDays: [] as string[],
+          mealQuantity: '',
+          breakfastAddOn: false,
+          dietPreferences: '',
+          allergies: '',
+          favorites: '',
+          groceryPreference: '',
+          proteins: [] as string[],
+          spiceLevel: '',
+          vegetarianPreference: '',
+          additionalComments: ''
+        })
+      } else {
+        setSubmitMessage('Sorry, there was an error submitting your request. Please try again.')
+      }
+    } catch (error) {
+      setSubmitMessage('Sorry, there was an error submitting your request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -552,9 +604,23 @@ export default function SignUp() {
 
                 {/* Submit Button */}
                 <div className="text-center pt-6">
-                  <button type="submit" className="btn-primary px-12 py-4 text-lg">
-                    Submit
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="btn-primary px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
+                  
+                  {submitMessage && (
+                    <div className={`mt-4 p-4 rounded-lg ${
+                      submitMessage.includes('Thank you') 
+                        ? 'bg-green-100 text-green-800 border border-green-200' 
+                        : 'bg-red-100 text-red-800 border border-red-200'
+                    }`}>
+                      {submitMessage}
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

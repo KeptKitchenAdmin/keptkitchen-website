@@ -307,7 +307,7 @@ export default function SignUp() {
                     What would be your ideal in-home cook or delivery day(s)?
                   </label>
                   <p className="text-sm text-gray-600 mb-4">Please check all that apply</p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
                     {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday or Sunday'].map((day) => (
                       <label key={day} className="flex items-center">
                         <input
@@ -452,7 +452,7 @@ export default function SignUp() {
                   <label className="block text-sm font-medium text-charcoal mb-4">
                     Please check off all proteins that you enjoy
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
                     {[
                       'Chicken (light meat)', 'Chicken (dark meat)', 'Beef', 'Pork',
                       'Lamb', 'Duck', 'Tofu', 'Tempeh', 'Eggs', 'Turkey',

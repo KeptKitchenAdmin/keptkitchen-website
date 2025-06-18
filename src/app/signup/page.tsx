@@ -104,7 +104,7 @@ export default function SignUp() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Name */}
                 <div>
-                  <h2 className="text-xl font-medium text-deep-charcoal mb-4">Name (required)</h2>
+                  <h2 className="text-sm font-medium text-deep-charcoal mb-4">Name (required)</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm text-charcoal mb-2">First Name</label>
@@ -158,7 +158,7 @@ export default function SignUp() {
 
                 {/* Address */}
                 <div>
-                  <h2 className="text-xl font-medium text-deep-charcoal mb-4">Address (required)</h2>
+                  <h2 className="text-sm font-medium text-deep-charcoal mb-4">Address (required)</h2>
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm text-charcoal mb-2">Country</label>
@@ -231,7 +231,7 @@ export default function SignUp() {
 
                 {/* Preferred Service Frequency */}
                 <div>
-                  <h2 className="text-xl font-medium text-deep-charcoal mb-2">Preferred Service Frequency</h2>
+                  <h2 className="text-sm font-medium text-deep-charcoal mb-2">Preferred Service Frequency</h2>
                   <p className="text-sm text-charcoal mb-4">How many days per week would you like your meals prepared?</p>
                   <div className="space-y-3">
                     <label className="flex items-start">
@@ -303,9 +303,9 @@ export default function SignUp() {
 
                 {/* Ideal Days */}
                 <div>
-                  <h2 className="text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-medium text-charcoal mb-2">
                     What would be your ideal in-home cook or delivery day(s)?
-                  </h2>
+                  </label>
                   <p className="text-sm text-gray-600 mb-4">Please check all that apply</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday or Sunday'].map((day) => (
@@ -326,7 +326,7 @@ export default function SignUp() {
 
                 {/* Weekly Meal Quantity */}
                 <div>
-                  <h2 className="text-xl font-medium text-deep-charcoal mb-2">Weekly Meal Quantity</h2>
+                  <h2 className="text-sm font-medium text-deep-charcoal mb-2">Weekly Meal Quantity</h2>
                   <p className="text-sm text-charcoal mb-4">
                     How many entrees (2 portions each) and add-ons do you anticipate ordering per week?
                   </p>
@@ -449,9 +449,9 @@ export default function SignUp() {
 
                 {/* Proteins */}
                 <div>
-                  <h2 className="text-sm font-medium text-charcoal mb-4">
+                  <label className="block text-sm font-medium text-charcoal mb-4">
                     Please check off all proteins that you enjoy
-                  </h2>
+                  </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {[
                       'Chicken (light meat)', 'Chicken (dark meat)', 'Beef', 'Pork',
@@ -468,7 +468,7 @@ export default function SignUp() {
                           onChange={handleChange}
                           className="mr-2"
                         />
-                        <span className="text-charcoal text-sm">{protein}</span>
+                        <span className="text-charcoal">{protein}</span>
                       </label>
                     ))}
                   </div>
@@ -496,9 +496,9 @@ export default function SignUp() {
 
                 {/* Vegetarian Preference */}
                 <div>
-                  <h2 className="text-sm font-medium text-charcoal mb-4">
+                  <label className="block text-sm font-medium text-charcoal mb-4">
                     Would you like any of your meals to be vegetarian?
-                  </h2>
+                  </label>
                   <div className="space-y-3">
                     <label className="flex items-start">
                       <input

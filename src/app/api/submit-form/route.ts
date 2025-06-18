@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 
     // Send the email
     const data = await resend.emails.send({
-      from: 'Service Request <noreply@thekeptkitchen.com>',
+      from: 'onboarding@resend.dev',
       to: ['wrem@thekeptkitchen.com'],
       subject: `New Service Request from ${formData.firstName} ${formData.lastName}`,
       html: emailHtml,

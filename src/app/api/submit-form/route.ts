@@ -18,6 +18,7 @@ interface ServiceRequestForm {
   idealDays: string[]
   mealQuantity: string
   breakfastAddOn: boolean
+  kidFoodAddOn: boolean
   dietPreferences: string
   allergies: string
   favorites: string
@@ -59,6 +60,7 @@ export async function POST(request: NextRequest) {
       <p><strong>Ideal Days:</strong> ${formData.idealDays?.join(', ') || 'None selected'}</p>
       <p><strong>Meal Quantity:</strong> ${formData.mealQuantity}</p>
       <p><strong>Breakfast Add-On:</strong> ${formData.breakfastAddOn ? 'Yes' : 'No'}</p>
+      <p><strong>Kid-Food Add-On:</strong> ${formData.kidFoodAddOn ? 'Yes' : 'No'}</p>
       
       <h3>Dietary Information</h3>
       <p><strong>Diet Preferences:</strong> ${formData.dietPreferences || 'None specified'}</p>

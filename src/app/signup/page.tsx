@@ -22,6 +22,7 @@ export default function SignUp() {
     idealDays: [] as string[],
     mealQuantity: '',
     breakfastAddOn: false,
+    kidFoodAddOn: false,
     dietPreferences: '',
     allergies: '',
     favorites: '',
@@ -108,6 +109,7 @@ export default function SignUp() {
           idealDays: [] as string[],
           mealQuantity: '',
           breakfastAddOn: false,
+          kidFoodAddOn: false,
           dietPreferences: '',
           allergies: '',
           favorites: '',
@@ -436,6 +438,16 @@ export default function SignUp() {
                         className="mr-3"
                       />
                       <span className="text-sm text-charcoal">Breakfast Add-On (4 or 6 servings)</span>
+                    </label>
+                    <label className="flex items-center mt-2">
+                      <input
+                        type="checkbox"
+                        name="kidFoodAddOn"
+                        checked={formData.kidFoodAddOn}
+                        onChange={handleChange}
+                        className="mr-3"
+                      />
+                      <span className="text-sm text-charcoal">Kid-Food Add-On (4 or 8 servings)</span>
                     </label>
                   </div>
                 </div>

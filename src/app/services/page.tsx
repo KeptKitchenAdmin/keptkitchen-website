@@ -1,11 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
-import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function Services() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -26,39 +28,30 @@ export default function Services() {
     return () => observer.disconnect()
   }, [])
 
-  const services = [
+  const steps = [
     {
-      title: 'Weekly Chef Service',
-      description: 'Your personal chef visits once or twice weekly, preparing a full week of meals tailored to your preferences.',
-      features: [
-        'Custom weekly menus',
-        'Grocery shopping included',
-        'Full kitchen cleanup',
-        'Meals stored and labeled',
-        'Dietary accommodations'
-      ]
+      title: 'Submit Your Intake Form',
+      description: 'Tell us about your household, food preferences, dietary needs, and schedule, so we can match you with the right chef.'
     },
     {
-      title: 'Family Meal Solutions',
-      description: 'Specialized service for busy families with options that work for both parents and kids.',
-      features: [
-        'Kid-friendly options',
-        'School lunch prep',
-        'Family dinner solutions',
-        'Snack preparation',
-        'Special occasion meals'
-      ]
+      title: 'Get Matched & Meet Your Chef',
+      description: 'We&apos;ll introduce you to your private chef and schedule a brief Zoom call or in-home kitchen assessment to align on needs, kitchen setup, and service goals. We will also answer any questions you may have!'
     },
     {
-      title: 'Executive Service',
-      description: 'Discreet, efficient service designed for busy professionals who value their time and privacy.',
-      features: [
-        'Minimal disruption',
-        'Ready-to-heat meals',
-        'Breakfast & lunch prep',
-        'Late meeting dinners',
-        'Entertainment ready'
-      ]
+      title: 'Choose Your Weekly Plan',
+      description: 'Select your base plan (3–6 entrees/week) and any additional add-ons. Once confirmed, we&apos;ll send you a simple service agreement to secure your start date.'
+    },
+    {
+      title: 'Personalized Menu Every Week',
+      description: 'Your chef will send a tailored menu each Friday, you will make your selections each Sunday, and get your invoice each Monday.'
+    },
+    {
+      title: 'Cook Day',
+      description: 'Your chef shops, cooks, labels, and stores everything in your fridge – no coordination or cleanup needed on your part.'
+    },
+    {
+      title: 'Enjoy & Provide Feedback Anytime',
+      description: 'Meals are ready when you are. You can text or email your chef any time to adjust preferences or offer feedback. We want to ensure you&apos;re happy with your experience and will always adapt as your needs evolve.'
     }
   ]
 
@@ -66,6 +59,7 @@ export default function Services() {
     <div className="min-h-screen bg-bone">
       <Navigation />
 
+      {/* Part 1: Hero and Service Plans */}
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-deep-brown to-espresso relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -74,165 +68,207 @@ export default function Services() {
         </div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl md:text-4xl font-serif text-bone mb-8 leading-tight animate-fade-in-up">
-              Chef services built around you
-            </h3>
+            <h1 className="text-4xl md:text-5xl font-serif text-bone mb-8 leading-tight animate-fade-in-up">
+              Chef services build around you
+            </h1>
             <p className="text-xl text-bone/90 font-light animate-fade-in-up max-w-3xl mx-auto" style={{ animationDelay: '0.2s' }}>
-              From quiet executives to growing families, we support households that never stop moving – 
-              with seasonal menus, personal touches, and chefs you actually trust.
+              From quiet executives to growing families, we support households that never stop moving - with seasonal menus, personal touches, and chefs you actually trust.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Weekly Service Plans */}
       <section className="py-20 px-6">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <div 
-                  key={index}
-                  className="bg-ivory border border-warm-taupe/20 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 scroll-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <h3 className="text-2xl font-serif text-espresso mb-4">{service.title}</h3>
-                  <p className="text-espresso font-light mb-6">{service.description}</p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg className="w-5 h-5 text-clay mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-espresso font-light">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-ivory to-bone">
-        <div className="container mx-auto">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif text-center text-espresso mb-16 scroll-fade-in">
-              How It Works
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-espresso mb-4 text-center scroll-fade-in">
+              Weekly Service Plans
             </h2>
-            <div className="space-y-12">
-              {[
-                {
-                  step: '01',
-                  title: 'Initial Consultation',
-                  description: 'We learn about your household, dietary preferences, and lifestyle to match you with the perfect chef.'
-                },
-                {
-                  step: '02',
-                  title: 'Chef Matching',
-                  description: 'Meet your dedicated chef who will become familiar with your kitchen, preferences, and routines.'
-                },
-                {
-                  step: '03',
-                  title: 'Weekly Menu Planning',
-                  description: 'Your chef creates custom menus each week, incorporating your feedback and seasonal ingredients.'
-                },
-                {
-                  step: '04',
-                  title: 'Service Day',
-                  description: 'Your chef shops, cooks, packages, and cleans – leaving your kitchen spotless and fridge full.'
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex gap-8 items-start scroll-fade-in">
-                  <div className="text-5xl font-serif text-muted-gold/30">{item.step}</div>
+            <p className="text-lg text-espresso/80 mb-12 text-center font-light">
+              Each entrée includes two large portions. Groceries billed separately.
+            </p>
+            
+            <div className="space-y-6 mb-12">
+              <div className="bg-ivory border border-warm-taupe/20 rounded-xl p-6 scroll-fade-in">
+                <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-2xl font-serif text-espresso mb-2">{item.title}</h3>
-                    <p className="text-lg text-espresso font-light">{item.description}</p>
+                    <h3 className="text-xl font-serif text-espresso">3 Entrées (6 servings)</h3>
+                  </div>
+                  <div className="text-2xl font-serif text-espresso">$525/week</div>
+                </div>
+              </div>
+              
+              <div className="bg-ivory border border-warm-taupe/20 rounded-xl p-6 scroll-fade-in">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-xl font-serif text-espresso">4 Entrées (8 servings)</h3>
+                  </div>
+                  <div className="text-2xl font-serif text-espresso">$625/week</div>
+                </div>
+              </div>
+              
+              <div className="bg-ivory border border-warm-taupe/20 rounded-xl p-6 scroll-fade-in">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-xl font-serif text-espresso">5 Entrées (10 servings)</h3>
+                    <p className="text-sm text-espresso/70">4 unique entrées + 1 duplicate of your choice</p>
+                  </div>
+                  <div className="text-2xl font-serif text-espresso">$750/week</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mb-16">
+              <p className="text-espresso font-light mb-4">
+                Service plans are month-to-month with weekly billing. Receive 5% off services with a 1-year commitment
+              </p>
+            </div>
+
+            {/* Optional Add-Ons */}
+            <div className="mb-16">
+              <h3 className="text-2xl md:text-3xl font-serif text-espresso mb-4 text-center scroll-fade-in">
+                Optional Add-Ons
+              </h3>
+              <p className="text-lg text-espresso/80 mb-8 text-center font-light">
+                Supplement your weekly meals with chef-prepared extras
+              </p>
+              
+              <div className="space-y-8">
+                {/* Breakfast Add-Ons */}
+                <div className="bg-ivory border border-warm-taupe/20 rounded-xl p-6 scroll-fade-in">
+                  <h4 className="text-xl font-serif text-espresso mb-2">Breakfast / Small Bite Add-Ons</h4>
+                  <div className="flex flex-wrap gap-4 mb-2">
+                    <span className="text-espresso">4 servings +$60</span>
+                    <span className="text-espresso">6 servings +$90</span>
                   </div>
                 </div>
+                
+                {/* Kid-Favorite Meals */}
+                <div className="bg-ivory border border-warm-taupe/20 rounded-xl p-6 scroll-fade-in">
+                  <h4 className="text-xl font-serif text-espresso mb-2">Kid-Favorite Meals Add-Ons</h4>
+                  <div className="flex flex-wrap gap-4 mb-4">
+                    <span className="text-espresso">4 servings +$80</span>
+                    <span className="text-espresso">8 servings +$145</span>
+                  </div>
+                  <p className="text-espresso/80 font-light mb-2">
+                    Chef-prepared staples designed for picky eaters and busy schedules. Examples include turkey meatballs with sweet potato fries, veggie mac, sesame noodles with chicken
+                  </p>
+                </div>
+              </div>
+              <p className="text-sm text-espresso/70 italic mt-4 text-center">
+                Kid portions are about 1/2 the size of our standard large adult portions
+              </p>
+            </div>
+
+            {/* Split Service Option */}
+            <div className="bg-warm-taupe/10 rounded-xl p-6 mb-8 scroll-fade-in">
+              <h4 className="text-xl font-serif text-espresso mb-2">Prefer two cook dates per week?</h4>
+              <p className="text-espresso font-light mb-4">
+                Prefer two cook dates per week? We offer split service on any plan for clients who need 10+ portions, want fresher meals midweek, or simply prefer smaller batches.
+              </p>
+              <Link href="/signup" className="text-espresso underline hover:text-espresso/80 transition-colors">
+                Get Started with a new-client intake form
+              </Link>
+            </div>
+
+            {/* Special Occasions */}
+            <div className="bg-clay/10 rounded-xl p-6 scroll-fade-in">
+              <h4 className="text-xl font-serif text-espresso mb-2">Special occasion or private dinner?</h4>
+              <p className="text-espresso font-light mb-2">
+                From small birthday parties and private dinners to a charcuterie & wine night with your friends, we offer one-off services for existing clients.
+              </p>
+              <p className="text-sm text-espresso/70 italic">
+                Subject to chef availability. <Link href="/contact" className="underline hover:text-espresso/80 transition-colors">Contact us</Link> for pricing
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Part 2: How It Works */}
+      <section className="py-20 px-6 bg-gradient-to-b from-ivory to-bone">
+        <div className="container mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Description */}
+              <div className="scroll-fade-in">
+                <h2 className="text-4xl md:text-5xl font-serif text-espresso mb-8">
+                  How It Works
+                </h2>
+                <p className="text-lg text-espresso font-light mb-6 leading-relaxed">
+                  We offer premium in-home chef services for busy households who want fresh, nutritious meals without the stress of planning, shopping, or cooking.
+                </p>
+                <p className="text-lg text-espresso font-light mb-6 leading-relaxed">
+                  Your dedicated chef comes to you each week, prepares a set number of entrées tailored to your preferences, and leaves your kitchen spotless.
+                </p>
+                <p className="text-lg text-espresso font-light mb-6 leading-relaxed">
+                  We know the weight that comes with planning meals, scrambling for last-minute groceries, and trying to make the &ldquo;right&rdquo; food decisions day after day. Our service was built to remove that mental load – so your time, energy, and focus can be spent where it matters most.
+                </p>
+                <p className="text-xl text-espresso font-medium">
+                  Let us handle the planning, shopping, and cooking – so you can focus on what matters most.
+                </p>
+              </div>
+
+              {/* Right Column - Accordion Steps */}
+              <div className="space-y-4">
+              {steps.map((step, index) => (
+                <div 
+                  key={index}
+                  className="bg-white border border-warm-taupe/20 rounded-xl hover:shadow-md transition-all duration-300 scroll-fade-in"
+                >
+                  <button
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    className="w-full text-left p-6 flex justify-between items-start"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="text-2xl font-serif text-clay">{index + 1}.</span>
+                      <h3 className="text-lg font-medium text-espresso">{step.title}</h3>
+                    </div>
+                    <svg 
+                      className={`w-5 h-5 text-espresso flex-shrink-0 transition-transform duration-300 ${
+                        openIndex === index ? 'rotate-180' : ''
+                      }`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openIndex === index && (
+                    <div className="px-6 pb-6">
+                      <div className="pl-12">
+                        <p className="text-espresso font-light leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Investment Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center scroll-fade-in">
-            <h2 className="text-4xl md:text-5xl font-serif text-espresso mb-8">
-              An Investment in Your Time
-            </h2>
-            <p className="text-xl text-espresso font-light mb-12 leading-relaxed">
-              Our service starts at $500 per week, including groceries, for households of 2-4 people. 
-              Pricing varies based on household size, service frequency, and specific requirements.
-            </p>
-            <div className="bg-warm-taupe/10 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-espresso font-light mb-6">
-                When you consider the time saved, stress eliminated, and quality of life improved, 
-                our clients consistently tell us it&apos;s the best investment they&apos;ve made.
-              </p>
-              <p className="text-2xl font-serif text-clay italic">
-                &ldquo;Honestly cheaper than what I was spending on takeout, 
-                and infinitely better for my family.&rdquo;
+            {/* Call to Action */}
+            <div className="text-center scroll-fade-in mt-16">
+              <p className="text-lg text-espresso font-light">
+                Have additional questions? Check out our{' '}
+                <Link href="/faq" className="text-espresso underline hover:text-espresso/80 transition-colors">
+                  FAQ page
+                </Link>
+                {' '}or feel free to{' '}
+                <Link href="/contact" className="text-espresso underline hover:text-espresso/80 transition-colors">
+                  Contact Us
+                </Link>
+                ! We would love to hear from you.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Callout */}
-      <section className="py-20 px-6 bg-gradient-to-b from-bone to-ivory">
-        <div className="container mx-auto text-center scroll-fade-in">
-          <h3 className="text-3xl font-serif text-espresso mb-6">
-            Have additional questions?
-          </h3>
-          <p className="text-lg text-espresso font-light mb-8">
-            Check out our <Link href="/faq" className="underline">FAQ</Link> page or feel free to <Link href="/contact" className="underline">Contact Us</Link>! We would love to hear from you.
-          </p>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 bg-espresso text-bone">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-serif text-2xl mb-4">Kept Kitchen Co.</h3>
-              <p className="text-warm-taupe font-light">
-                Premium private chef services for discerning families and professionals.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li><Link href="/about" className="hover:text-bone transition-colors">About</Link></li>
-                <li><Link href="/services" className="hover:text-bone transition-colors">Services</Link></li>
-                <li><Link href="/signup" className="hover:text-bone transition-colors">Sign Up</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Support</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li><Link href="/faq" className="hover:text-bone transition-colors">FAQ</Link></li>
-                <li><Link href="/contact" className="hover:text-bone transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Contact</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li>hello@keptkitchen.co</li>
-                <li>(555) 123-4567</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-warm-taupe/30 pt-8 text-center text-warm-taupe">
-            <p>&copy; 2024 Kept Kitchen Co. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

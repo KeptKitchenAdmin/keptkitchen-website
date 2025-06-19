@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -640,44 +641,7 @@ export default function SignUp() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 bg-charcoal text-white mt-20">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-serif text-2xl mb-4">Kept Kitchen Co.</h3>
-              <p className="text-warm-gray font-light">
-                Premium private chef services for discerning families and professionals.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-warm-gray font-light">
-                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-                <li><Link href="/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Support</h4>
-              <ul className="space-y-2 text-warm-gray font-light">
-                <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Contact</h4>
-              <ul className="space-y-2 text-warm-gray font-light">
-                <li>hello@keptkitchen.co</li>
-                <li>(555) 123-4567</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-warm-gray/30 pt-8 text-center text-warm-gray">
-            <p>&copy; 2024 Kept Kitchen Co. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

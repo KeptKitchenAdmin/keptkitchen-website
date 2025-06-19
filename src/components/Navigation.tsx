@@ -27,19 +27,20 @@ export default function Navigation() {
     { href: '/faq', label: 'FAQ' },
   ]
 
-  // Check if we're on a page with a dark hero section
-  const isDarkHero = pathname === '/' || pathname === '/services' || pathname === '/contact'
-  const needsLightText = isDarkHero && !scrolled
+  // Always use light text on dark background
+  const needsLightText = true
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-bone/95 backdrop-blur-md shadow-sm' 
-        : 'bg-bone/50 backdrop-blur-md'
+        ? 'bg-deep-charcoal shadow-lg' 
+        : 'bg-deep-charcoal'
     }`}>
-      <div className="container mx-auto px-6 py-5">
+      <div className="container mx-auto px-6 py-12">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-serif font-medium tracking-wide transition-colors text-espresso hover:text-clay">
+          <Link href="/" className={`text-2xl font-serif font-medium tracking-wide transition-colors ${
+            needsLightText ? 'text-white hover:text-bone' : 'text-espresso hover:text-clay'
+          }`}>
             Kept Kitchen Co.
           </Link>
           
@@ -51,8 +52,8 @@ export default function Navigation() {
                 href={item.href}
                 className={`text-sm font-semibold tracking-[0.12em] uppercase transition-all duration-300 pb-1 ${
                   pathname === item.href
-                    ? 'text-clay border-b-2 border-clay'
-                    : 'text-espresso hover:text-clay hover:border-b-2 hover:border-clay/30'
+                    ? needsLightText ? 'text-bone border-b-2 border-bone' : 'text-clay border-b-2 border-clay'
+                    : needsLightText ? 'text-white hover:text-bone hover:border-b-2 hover:border-bone/30' : 'text-espresso hover:text-clay hover:border-b-2 hover:border-clay/30'
                 }`}
               >
                 {item.label}
@@ -63,7 +64,9 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden transition-colors text-espresso hover:text-clay"
+            className={`md:hidden transition-colors ${
+              needsLightText ? 'text-white hover:text-bone' : 'text-espresso hover:text-clay'
+            }`}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {isMenuOpen ? (

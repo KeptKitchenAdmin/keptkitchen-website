@@ -13,7 +13,7 @@ const config: Config = {
         ivory: 'var(--ivory)',
         sand: 'var(--sand)',
         espresso: 'var(--espresso)',
-        charcoal: 'var(--charcoal)',
+        'deep-charcoal': 'var(--deep-charcoal)',
         'warm-taupe': 'var(--warm-taupe)',
         clay: 'var(--clay)',
         'muted-gold': 'var(--muted-gold)',

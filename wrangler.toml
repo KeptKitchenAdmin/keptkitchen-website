@@ -1,0 +1,16 @@
+name = "keptkitchen-website"
+main = ".open-next/worker.js"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+minify = true
+upload_source_maps = true
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[observability]
+enabled = true
+
+[vars]
+RESEND_API_KEY = "re_Jb3XAWMp_MpvmERRGcJNFy7mw8XQKzYnF"

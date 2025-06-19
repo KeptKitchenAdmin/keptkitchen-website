@@ -12,5 +12,4 @@ binding = "ASSETS"
 [observability]
 enabled = true
 
-[vars]
-RESEND_API_KEY = "re_Jb3XAWMp_MpvmERRGcJNFy7mw8XQKzYnF"
+# API keys should be set as secrets in Cloudflare dashboard, not in this file

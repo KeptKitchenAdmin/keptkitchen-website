@@ -110,8 +110,8 @@ export default function Home() {
             </p>
             <p className="text-sm md:text-base text-black mb-8 font-normal leading-relaxed">
               We tailor our service to your routines, your space, and your standards.<br />
-              From planning and shopping to cooking and cleanup, we handle the details<br />
-              so you can spend your time on other things.
+              From planning and shopping to cooking and cleanup, we handle the<br />
+              details so you can spend your time on other things.
             </p>
             <Link href="/services">
               <button className="bg-black hover:bg-gray-800 text-white font-medium py-3 px-8 rounded-full text-sm transition-colors duration-300">
@@ -135,67 +135,67 @@ export default function Home() {
             Notes from Our Clients
           </h3>
           
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;I&apos;ve used local private chefs before, but Kept is the first company that really exceeded all expectations.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— Sarah H, Vancouver WA</p>
+              <p className="text-gray-600 text-xs font-normal">— Sarah H, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;I used to dread meal planning, now i come home to food I actually can&apos;t wait to eat. It&apos;s so much less stressful to only have to plan my own breakfast now&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— Nada G, North Hills</p>
+              <p className="text-gray-600 text-xs font-normal">— Nada G, North Hills</p>
             </div>
             
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;With three kids and no time to cook, their kid food add-ons brought sooo much order, joy, and actual peace back to our evenings.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— Erin & Josh, Vancouver WA</p>
+              <p className="text-gray-600 text-xs font-normal">— Erin & Josh, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;Honestly this has been the most high-value service i&apos;ve ever invested in. I can&apos;t even tell you how much easier it&apos;s made my life.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— James L, Beaverton</p>
+              <p className="text-gray-600 text-xs font-normal">— James L, Beaverton</p>
             </div>
             
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;I work long hours and value my privacy - my chef really understands how to get the job done without disrupting my routine.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— Anonymous, Vancouver WA</p>
+              <p className="text-gray-600 text-xs font-normal">— Anonymous, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-6 text-left">
-              <p className="text-gray-800 text-sm leading-relaxed mb-4">
+            <div className="bg-white p-5 text-left shadow-sm">
+              <p className="text-black text-sm leading-relaxed mb-3 font-normal">
                 &ldquo;I&apos;ve tried other private chefs in the past, but none have delivered the same level of experience, flavor, and reliability I get with Kept. The difference in quality is obvious.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs">— Avery L, Northeast Portland</p>
+              <p className="text-gray-600 text-xs font-normal">— Avery L, Northeast Portland</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section 4 - EXACT Footer match to NotesFromOurClients2 + Footer.png */}
-      <footer className="bg-gray-900 py-16">
+      <footer className="bg-gray-800 py-12">
         <div className="max-w-6xl mx-auto px-16">
-          <div className="grid grid-cols-3 gap-16 text-left">
+          <div className="grid grid-cols-3 gap-12 text-left">
             
             {/* Column 1 */}
             <div>
-              <h4 className="text-lg font-serif mb-1 text-white font-normal">Kept Kitchen Co.</h4>
-              <p className="text-sm text-gray-300 font-light">Kept Kitchen LLC.</p>
+              <h4 className="text-white font-serif text-base mb-1 font-normal">Kept Kitchen Co.</h4>
+              <p className="text-gray-400 text-sm font-light">Kept Kitchen LLC.</p>
             </div>
             
             {/* Column 2 */}
             <div>
-              <h4 className="text-sm font-normal mb-1 text-white">Now Serving</h4>
-              <p className="text-sm text-gray-300 leading-relaxed font-light">
+              <h4 className="text-white text-sm font-normal mb-1">Now Serving</h4>
+              <p className="text-gray-400 text-sm leading-relaxed font-light">
                 Portland, Vancouver, and<br />
                 surrounding areas
               </p>
@@ -203,9 +203,9 @@ export default function Home() {
             
             {/* Column 3 */}
             <div>
-              <h4 className="text-sm font-normal mb-1 text-white">Contact</h4>
-              <p className="text-sm text-gray-300 mb-1 font-light">Management@thekeptkitchen.com</p>
-              <Link href="/contact" className="text-sm text-gray-300 underline hover:text-white font-light">
+              <h4 className="text-white text-sm font-normal mb-1">Contact</h4>
+              <p className="text-gray-400 text-sm mb-1 font-light">Management@thekeptkitchen.com</p>
+              <Link href="/contact" className="text-gray-400 text-sm underline hover:text-white font-light">
                 Contact Us
               </Link>
             </div>

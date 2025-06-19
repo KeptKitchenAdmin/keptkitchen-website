@@ -136,46 +136,46 @@ export default function Home() {
           </h3>
           
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;I&apos;ve used local private chefs before, but Kept is the first company that really exceeded all expectations.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— Sarah H, Vancouver WA</p>
+              <p className="text-gray-700 text-xs font-normal">— Sarah H, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;I used to dread meal planning, now i come home to food I actually can&apos;t wait to eat. It&apos;s so much less stressful to only have to plan my own breakfast now&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— Nada G, North Hills</p>
+              <p className="text-gray-700 text-xs font-normal">— Nada G, North Hills</p>
             </div>
             
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;With three kids and no time to cook, their kid food add-ons brought sooo much order, joy, and actual peace back to our evenings.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— Erin & Josh, Vancouver WA</p>
+              <p className="text-gray-700 text-xs font-normal">— Erin & Josh, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;Honestly this has been the most high-value service i&apos;ve ever invested in. I can&apos;t even tell you how much easier it&apos;s made my life.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— James L, Beaverton</p>
+              <p className="text-gray-700 text-xs font-normal">— James L, Beaverton</p>
             </div>
             
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;I work long hours and value my privacy - my chef really understands how to get the job done without disrupting my routine.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— Anonymous, Vancouver WA</p>
+              <p className="text-gray-700 text-xs font-normal">— Anonymous, Vancouver WA</p>
             </div>
             
-            <div className="bg-white p-8 text-left">
+            <div className="bg-stone-100 p-6 text-left">
               <p className="text-black text-sm leading-relaxed mb-4 font-normal">
                 &ldquo;I&apos;ve tried other private chefs in the past, but none have delivered the same level of experience, flavor, and reliability I get with Kept. The difference in quality is obvious.&rdquo;
               </p>
-              <p className="text-gray-600 text-xs font-normal">— Avery L, Northeast Portland</p>
+              <p className="text-gray-700 text-xs font-normal">— Avery L, Northeast Portland</p>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   useEffect(() => {
@@ -63,64 +64,32 @@ export default function Home() {
     <div className="min-h-screen bg-bone">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/1.jpg"
-            alt="Premium culinary experience"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
-        </div>
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white/90 backdrop-blur-md rounded-3xl p-12 md:p-20 shadow-2xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-espresso mb-8 leading-[1.15] tracking-tight">
-                Private chef services for elevated home life
-              </h1>
-              <p className="text-xl md:text-2xl text-espresso mb-12 font-light leading-relaxed">
-                For families and professionals who value time, nourishment, and peace of mind – we bring rhythm back to the dinner table.
-              </p>
-              <Link href="/signup">
-                <button className="btn-primary text-lg px-10 py-4">SIGN UP FOR SERVICES</button>
-              </Link>
-            </div>
-          </div>
-        </div>
+      {/* Hero Section - Exact match to HomePage1.png */}
+      <section className="relative h-screen">
+        <Image
+          src="/HomePage1.png"
+          alt="Private Chef Services for Elevated Home Life"
+          fill
+          className="object-cover"
+          priority
+        />
       </section>
 
-      {/* Second Hero Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-ivory to-bone">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center scroll-fade-in">
-            <h2 className="text-4xl md:text-5xl font-serif text-espresso mb-8 leading-tight">
-              Your Kitchen, kept to the highest standard
-            </h2>
-            <p className="text-xl text-espresso mb-8 font-light leading-relaxed">
-              We provide weekly chef services that give back your time, nourish your body, and support your home – bringing relief, not more to manage.
-            </p>
-            <p className="text-lg text-espresso mb-12 font-light max-w-3xl mx-auto">
-              We tailor our service to your routines, your space, and your standards. From planning and shopping to cooking and cleanup, we handle the details so you can spend your time on other things.
-            </p>
-            <Link href="/services">
-              <button className="btn-secondary">EXPLORE OUR SERVICES</button>
-            </Link>
-          </div>
-        </div>
+      {/* Second Section - Exact match to Homepage2.png */}
+      <section className="relative h-screen">
+        <Image
+          src="/Homepage2.png"
+          alt="Your kitchen, kept to the highest standard"
+          fill
+          className="object-cover"
+        />
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 px-6 bg-deep-brown relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-muted-gold rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-clay rounded-full filter blur-3xl"></div>
-        </div>
-        <div className="container mx-auto relative z-10">
+      <section className="py-24 px-6 bg-bone">
+        <div className="container mx-auto">
           <div className="text-center mb-16 scroll-fade-in">
-            <h3 className="text-3xl md:text-4xl font-serif text-bone">
+            <h3 className="text-3xl md:text-4xl font-serif text-espresso">
               Notes from our clients:
             </h3>
           </div>
@@ -129,12 +98,11 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 scroll-fade-in"
+                className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-xl transition-all duration-500 scroll-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-muted-gold text-4xl mb-4">{index + 1}.</div>
-                <p className="text-bone/90 font-light text-lg leading-relaxed mb-6">
-                  {testimonial.text}
+                <p className="text-espresso font-light text-lg leading-relaxed italic">
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
               </div>
             ))}
@@ -142,59 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-bone to-ivory">
-        <div className="container mx-auto px-6 text-center scroll-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif text-espresso mb-6">
-            Ready to reclaim your time?
-          </h2>
-          <p className="text-xl text-espresso mb-10 max-w-2xl mx-auto font-light">
-            Join families who&apos;ve discovered the peace of a professionally kept kitchen.
-          </p>
-          <Link href="/signup">
-            <button className="btn-primary">GET STARTED TODAY</button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 bg-espresso text-bone">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-serif text-2xl mb-4">Kept Kitchen Co.</h3>
-              <p className="text-warm-taupe font-light">
-                Premium private chef services for discerning families and professionals.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li><Link href="/about" className="hover:text-bone transition-colors">About</Link></li>
-                <li><Link href="/services" className="hover:text-bone transition-colors">Services</Link></li>
-                <li><Link href="/signup" className="hover:text-bone transition-colors">Sign Up</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Support</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li><Link href="/faq" className="hover:text-bone transition-colors">FAQ</Link></li>
-                <li><Link href="/contact" className="hover:text-bone transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4">Contact</h4>
-              <ul className="space-y-2 text-warm-taupe font-light">
-                <li>hello@keptkitchen.co</li>
-                <li>(555) 123-4567</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-warm-taupe/30 pt-8 text-center text-warm-taupe">
-            <p>&copy; 2024 Kept Kitchen Co. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

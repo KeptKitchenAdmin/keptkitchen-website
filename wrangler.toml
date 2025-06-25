@@ -2,14 +2,11 @@ name = "keptkitchen-website"
 main = ".open-next/worker.js"
 compatibility_date = "2025-04-01"
 compatibility_flags = ["nodejs_compat"]
-minify = true
-upload_source_maps = true
 
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
-[observability]
-enabled = true
-
-# API keys should be set as secrets in Cloudflare dashboard, not in this file
+[[routes]]
+pattern = "www.thekeptkitchen.com/*"
+zone_name = "thekeptkitchen.com"

@@ -1,32 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useState } from 'react'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-        }
-      })
-    }, observerOptions)
-
-    const elements = document.querySelectorAll('.scroll-fade-in')
-    elements.forEach(el => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
 
   const faqs = [
     {
@@ -172,30 +152,47 @@ Week-to-week clients must submit cancellation requests by Thursday at 10:00pm fo
   ]
 
   return (
-    <div className="min-h-screen bg-bone">
+    <div className="min-h-screen bg-warm-taupe/60">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-ivory to-bone">
-        <div className="container mx-auto">
+      <section className="relative pt-32 pb-20 px-6 min-h-[60vh] flex items-center">
+        <Image
+          src="/Extra Option4.jpg"
+          alt="Frequently Asked Questions"
+          fill
+          className="object-cover"
+          style={{ objectPosition: '50% 50%' }}
+          priority
+        />
+        {/* Darkening overlay */}
+        <div className="absolute inset-0 bg-black/50 z-[5]" />
+        
+        <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-serif text-espresso mb-6 animate-fade-in-up">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl text-espresso/80 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Still wondering how it works? We&apos;ve got you
-            </p>
+            <div className="relative inline-block">
+              <div className="absolute inset-0 -inset-x-2 -inset-y-1 bg-black/10 backdrop-blur-[2px] rounded-2xl"></div>
+              <h1 className="relative text-5xl md:text-6xl font-serif text-white mb-6 px-2 py-1">
+                Frequently Asked Questions
+              </h1>
+            </div>
+            <div className="relative inline-block">
+              <div className="absolute inset-0 -inset-x-2 -inset-y-1 bg-black/10 backdrop-blur-[2px] rounded-xl"></div>
+              <p className="relative text-xl text-white/90 font-serif font-light px-2 py-1">
+                Still wondering how it works? We&apos;ve got you
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Content */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-warm-taupe/80">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
             {faqs.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="mb-16 scroll-fade-in">
-                <h2 className="text-3xl font-serif text-clay mb-8">{category.category}</h2>
+              <div key={categoryIndex} className="mb-16">
+                <h2 className="text-3xl font-serif text-espresso mb-8">{category.category}</h2>
                 <div className="space-y-4">
                   {category.questions.map((faq, index) => {
                     const globalIndex = categoryIndex * 100 + index
@@ -208,7 +205,7 @@ Week-to-week clients must submit cancellation requests by Thursday at 10:00pm fo
                           onClick={() => setOpenIndex(openIndex === globalIndex ? null : globalIndex)}
                           className="w-full text-left p-6 flex justify-between items-start"
                         >
-                          <h3 className="text-lg font-medium text-espresso pr-4">{faq.q}</h3>
+                          <h3 className="text-lg font-serif font-medium text-espresso pr-4">{faq.q}</h3>
                           <svg 
                             className={`w-5 h-5 text-espresso flex-shrink-0 transition-transform duration-300 ${
                               openIndex === globalIndex ? 'rotate-180' : ''
@@ -222,7 +219,7 @@ Week-to-week clients must submit cancellation requests by Thursday at 10:00pm fo
                         </button>
                         {openIndex === globalIndex && (
                           <div className="px-6 pb-6">
-                            <div className="text-espresso font-light whitespace-pre-line leading-relaxed">
+                            <div className="text-espresso font-serif font-light whitespace-pre-line leading-relaxed">
                               {faq.a}
                             </div>
                           </div>
@@ -234,21 +231,6 @@ Week-to-week clients must submit cancellation requests by Thursday at 10:00pm fo
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-bone to-ivory">
-        <div className="container mx-auto px-6 text-center scroll-fade-in">
-          <h2 className="text-4xl font-serif text-espresso mb-6">
-            Still have questions?
-          </h2>
-          <p className="text-xl text-espresso mb-10 max-w-2xl mx-auto font-light">
-            We&apos;re here to help. Reach out and we&apos;ll get back to you within 24 hours.
-          </p>
-          <Link href="/contact">
-            <button className="btn-primary">CONTACT US</button>
-          </Link>
         </div>
       </section>
 

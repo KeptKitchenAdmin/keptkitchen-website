@@ -33,10 +33,12 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-deep-charcoal shadow-lg' 
-        : 'bg-deep-charcoal'
-    }`}>
-      <div className="container mx-auto px-6 py-12">
+        ? 'bg-deep-charcoal backdrop-blur-sm shadow-lg' 
+        : 'backdrop-blur-sm'
+    }`} style={{
+      backgroundColor: scrolled ? 'var(--deep-charcoal)' : 'rgba(29, 25, 21, 0.98)'
+    }}>
+      <div className="container mx-auto px-6" style={{paddingTop: '1rem', paddingBottom: '1rem'}}>
         <div className="flex items-center justify-between">
           <Link href="/" className={`text-2xl font-serif font-medium tracking-wide transition-colors ${
             needsLightText ? 'text-white hover:text-bone' : 'text-espresso hover:text-clay'
@@ -50,7 +52,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-semibold tracking-[0.12em] uppercase transition-all duration-300 pb-1 ${
+                className={`text-sm font-serif tracking-[0.12em] uppercase transition-all duration-300 pb-1 ${
                   pathname === item.href
                     ? needsLightText ? 'text-bone border-b-2 border-bone' : 'text-clay border-b-2 border-clay'
                     : needsLightText ? 'text-white hover:text-bone hover:border-b-2 hover:border-bone/30' : 'text-espresso hover:text-clay hover:border-b-2 hover:border-clay/30'
@@ -87,7 +89,7 @@ export default function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-sm font-semibold tracking-wider uppercase ${
+                  className={`text-sm font-serif tracking-wider uppercase ${
                     pathname === item.href
                       ? 'text-clay'
                       : 'text-espresso hover:text-clay'

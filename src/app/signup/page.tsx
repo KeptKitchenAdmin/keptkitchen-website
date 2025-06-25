@@ -131,20 +131,20 @@ export default function SignUp() {
   }
 
   return (
-    <div className="min-h-screen bg-soft-white">
+    <div className="min-h-screen bg-bone">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6 bg-gradient-to-br from-maple/10 via-soft-white to-cream">
+      <section className="pt-32 pb-12 px-6 bg-gradient-to-br from-maple/20 via-warm-taupe/10 to-clay/15">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-serif text-deep-charcoal mb-6 animate-fade-in-up">
               Now Accepting Clients for Fall 2025
             </h1>
-            <p className="text-xl text-charcoal font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl text-charcoal font-serif font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
               If you&apos;re interested in securing a spot, please take a moment to fill out our Service Request Form.
             </p>
-            <p className="text-lg text-charcoal font-light italic animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg text-charcoal font-serif font-light italic animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               We will be reviewing all submissions personally and will reach out as soon as possible.
             </p>
           </div>
@@ -159,10 +159,10 @@ export default function SignUp() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Name */}
                 <div>
-                  <div className="text-sm font-medium text-charcoal mb-4">Name (required)</div>
+                  <div className="text-sm font-serif font-medium text-charcoal mb-4">Name (required)</div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-charcoal mb-2">First Name</label>
+                      <label className="block text-sm font-serif font-medium text-charcoal mb-2">First Name</label>
                       <input
                         type="text"
                         name="firstName"
@@ -173,7 +173,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-charcoal mb-2">Last Name</label>
+                      <label className="block text-sm font-serif font-medium text-charcoal mb-2">Last Name</label>
                       <input
                         type="text"
                         name="lastName"
@@ -188,7 +188,7 @@ export default function SignUp() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">Email (required)</label>
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">Email (required)</label>
                   <input
                     type="email"
                     name="email"
@@ -201,7 +201,7 @@ export default function SignUp() {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">Phone</label>
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -213,10 +213,10 @@ export default function SignUp() {
 
                 {/* Address */}
                 <div>
-                  <div className="text-sm font-medium text-charcoal mb-4">Address (required)</div>
+                  <div className="text-sm font-serif font-medium text-charcoal mb-4">Address (required)</div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-charcoal mb-2">Country</label>
+                      <label className="block text-sm font-serif font-medium text-charcoal mb-2">Country</label>
                       <input
                         type="text"
                         name="country"
@@ -226,7 +226,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-charcoal mb-2">Address Line 1 (required)</label>
+                      <label className="block text-sm font-serif font-medium text-charcoal mb-2">Address Line 1 (required)</label>
                       <input
                         type="text"
                         name="addressLine1"
@@ -237,7 +237,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-charcoal mb-2">Address Line 2</label>
+                      <label className="block text-sm font-serif font-medium text-charcoal mb-2">Address Line 2</label>
                       <input
                         type="text"
                         name="addressLine2"
@@ -248,7 +248,7 @@ export default function SignUp() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-2">City (required)</label>
+                        <label className="block text-sm font-serif font-medium text-charcoal mb-2">City (required)</label>
                         <input
                           type="text"
                           name="city"
@@ -259,7 +259,7 @@ export default function SignUp() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-2">State (required)</label>
+                        <label className="block text-sm font-serif font-medium text-charcoal mb-2">State (required)</label>
                         <input
                           type="text"
                           name="state"
@@ -270,7 +270,7 @@ export default function SignUp() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-2">ZIP Code (required)</label>
+                        <label className="block text-sm font-serif font-medium text-charcoal mb-2">ZIP Code (required)</label>
                         <input
                           type="text"
                           name="zip"
@@ -286,8 +286,8 @@ export default function SignUp() {
 
                 {/* Preferred Service Frequency */}
                 <div>
-                  <div className="text-sm font-medium text-charcoal mb-2">Preferred Service Frequency</div>
-                  <p className="text-sm text-charcoal mb-4">How many days per week would you like your meals prepared?</p>
+                  <div className="text-sm font-serif font-medium text-charcoal mb-2">Preferred Service Frequency</div>
+                  <p className="text-sm font-serif text-charcoal mb-4">How many days per week would you like your meals prepared?</p>
                   <div className="space-y-3">
                     <label className="flex items-start">
                       <input
@@ -298,7 +298,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Once per week (most common)</span>
+                      <span className="text-sm font-serif text-charcoal">Once per week (most common)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -309,7 +309,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Twice per week (split service – higher volume or freshness)</span>
+                      <span className="text-sm font-serif text-charcoal">Twice per week (split service – higher volume or freshness)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -320,14 +320,14 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Not sure yet – I&apos;d like to discuss options</span>
+                      <span className="text-sm font-serif text-charcoal">Not sure yet – I&apos;d like to discuss options</span>
                     </label>
                   </div>
                 </div>
 
                 {/* Start Date */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">When would you like to begin services?</label>
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">When would you like to begin services?</label>
                   <select
                     name="startDate"
                     value={formData.startDate}
@@ -344,7 +344,7 @@ export default function SignUp() {
 
                 {/* Household Info */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     How many people are in your household? What are their ages?
                   </label>
                   <textarea
@@ -358,10 +358,10 @@ export default function SignUp() {
 
                 {/* Ideal Days */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     What would be your ideal in-home cook or delivery day(s)?
                   </label>
-                  <p className="text-sm text-gray-600 mb-4">Please check all that apply</p>
+                  <p className="text-sm font-serif text-gray-600 mb-4">Please check all that apply</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
                     {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday or Sunday'].map((day) => (
                       <label key={day} className="flex items-center">
@@ -373,7 +373,7 @@ export default function SignUp() {
                           onChange={handleChange}
                           className="mr-2"
                         />
-                        <span className="text-sm text-charcoal">{day}</span>
+                        <span className="text-sm font-serif text-charcoal">{day}</span>
                       </label>
                     ))}
                   </div>
@@ -381,8 +381,8 @@ export default function SignUp() {
 
                 {/* Weekly Meal Quantity */}
                 <div>
-                  <div className="text-sm font-medium text-charcoal mb-2">Weekly Meal Quantity</div>
-                  <p className="text-sm text-charcoal mb-4">
+                  <div className="text-sm font-serif font-medium text-charcoal mb-2">Weekly Meal Quantity</div>
+                  <p className="text-sm font-serif text-charcoal mb-4">
                     How many entrees (2 portions each) and add-ons do you anticipate ordering per week?
                   </p>
                   <div className="space-y-3">
@@ -395,7 +395,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">3 Entrees (6 portions)</span>
+                      <span className="text-sm font-serif text-charcoal">3 Entrees (6 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -406,7 +406,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">4 Entrees (8 portions)</span>
+                      <span className="text-sm font-serif text-charcoal">4 Entrees (8 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -417,7 +417,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">5 Entrees (10 portions)</span>
+                      <span className="text-sm font-serif text-charcoal">5 Entrees (10 portions)</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -428,7 +428,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">6 Entrees (12 portions – available only for split service)</span>
+                      <span className="text-sm font-serif text-charcoal">6 Entrees (12 portions – available only for split service)</span>
                     </label>
                     <label className="flex items-center mt-4">
                       <input
@@ -438,7 +438,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mr-3"
                       />
-                      <span className="text-sm text-charcoal">Breakfast Add-On (4 or 6 servings)</span>
+                      <span className="text-sm font-serif text-charcoal">Breakfast Add-On (4 or 6 servings)</span>
                     </label>
                     <label className="flex items-center mt-2">
                       <input
@@ -448,17 +448,17 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mr-3"
                       />
-                      <span className="text-sm text-charcoal">Kid-Food Add-On (4 or 8 servings)</span>
+                      <span className="text-sm font-serif text-charcoal">Kid-Food Add-On (4 or 8 servings)</span>
                     </label>
                   </div>
                 </div>
 
                 {/* Diet Preferences */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Do you or does anyone in your family have any specific diet preferences?
                   </label>
-                  <p className="text-sm text-gray-600 mb-2">Gluten Free, Paleo, Vegan, Vegetarian, etc.</p>
+                  <p className="text-sm font-serif text-gray-600 mb-2">Gluten Free, Paleo, Vegan, Vegetarian, etc.</p>
                   <textarea
                     name="dietPreferences"
                     value={formData.dietPreferences}
@@ -470,10 +470,10 @@ export default function SignUp() {
 
                 {/* Allergies */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Please list any food allergies, intolerances, or strong dislikes.
                   </label>
-                  <p className="text-sm text-gray-600 mb-2">Dairy, peanuts, brussel sprouts, etc.</p>
+                  <p className="text-sm font-serif text-gray-600 mb-2">Dairy, peanuts, brussel sprouts, etc.</p>
                   <textarea
                     name="allergies"
                     value={formData.allergies}
@@ -485,10 +485,10 @@ export default function SignUp() {
 
                 {/* Favorites */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Please list any dishes, ingredients, or cuisines that you LOVE
                   </label>
-                  <p className="text-sm text-gray-600 mb-2">Spicy food, Italian food, Soup, etc.</p>
+                  <p className="text-sm font-serif text-gray-600 mb-2">Spicy food, Italian food, Soup, etc.</p>
                   <textarea
                     name="favorites"
                     value={formData.favorites}
@@ -500,7 +500,7 @@ export default function SignUp() {
 
                 {/* Grocery Preference */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Do you have a grocery preference on conventional or organic items or produce?
                   </label>
                   <textarea
@@ -514,7 +514,7 @@ export default function SignUp() {
 
                 {/* Proteins */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-4">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-4">
                     Please check off all proteins that you enjoy
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-3">
@@ -541,7 +541,7 @@ export default function SignUp() {
 
                 {/* Spice Level */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Which spice level do you prefer?
                   </label>
                   <select
@@ -561,7 +561,7 @@ export default function SignUp() {
 
                 {/* Vegetarian Preference */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-4">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-4">
                     Would you like any of your meals to be vegetarian?
                   </label>
                   <div className="space-y-3">
@@ -574,7 +574,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Yes, all of them please</span>
+                      <span className="text-sm font-serif text-charcoal">Yes, all of them please</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -585,7 +585,7 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Some of them is fine</span>
+                      <span className="text-sm font-serif text-charcoal">Some of them is fine</span>
                     </label>
                     <label className="flex items-start">
                       <input
@@ -596,14 +596,14 @@ export default function SignUp() {
                         onChange={handleChange}
                         className="mt-1 mr-3"
                       />
-                      <span className="text-sm text-charcoal">Nope, I&apos;d like some meat in all of them!</span>
+                      <span className="text-sm font-serif text-charcoal">Nope, I&apos;d like some meat in all of them!</span>
                     </label>
                   </div>
                 </div>
 
                 {/* Additional Comments */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label className="block text-sm font-serif font-medium text-charcoal mb-2">
                     Any additional comments?
                   </label>
                   <textarea
@@ -620,7 +620,7 @@ export default function SignUp() {
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="btn-primary px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
@@ -628,8 +628,8 @@ export default function SignUp() {
                   {submitMessage && (
                     <div className={`mt-4 p-4 rounded-lg ${
                       submitMessage.includes('Thank you') 
-                        ? 'bg-green-100 text-green-800 border border-green-200' 
-                        : 'bg-red-100 text-red-800 border border-red-200'
+                        ? 'bg-green-100 text-green-800 font-serif border border-green-200' 
+                        : 'bg-red-100 text-red-800 font-serif border border-red-200'
                     }`}>
                       {submitMessage}
                     </div>

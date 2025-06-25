@@ -59,7 +59,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-soft-white">
+    <div className="min-h-screen bg-bone">
       <Navigation />
 
       {/* Hero Section */}
@@ -69,7 +69,7 @@ export default function Contact() {
             <h1 className="text-3xl md:text-4xl font-serif text-deep-charcoal mb-6 animate-fade-in-up">
               Whether you&apos;re looking to partner with us, or just have a special question, we would love to hear from you!
             </h1>
-            <p className="text-xl text-charcoal font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl text-charcoal font-serif font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
               Looking to sign up for services? <Link href="/signup" className="text-maple hover:text-maple/80 underline transition-colors">Click here!</Link>
             </p>
           </div>
@@ -85,10 +85,10 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <div className="text-sm font-medium text-charcoal mb-4">Name (required)</div>
+                    <div className="text-sm font-serif font-medium text-charcoal mb-4">Name (required)</div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-2">First Name</label>
+                        <label className="block text-sm font-serif font-medium text-charcoal mb-2">First Name</label>
                         <input
                           type="text"
                           name="firstName"
@@ -99,7 +99,7 @@ export default function Contact() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-2">Last Name</label>
+                        <label className="block text-sm font-serif font-medium text-charcoal mb-2">Last Name</label>
                         <input
                           type="text"
                           name="lastName"
@@ -114,7 +114,7 @@ export default function Contact() {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-medium text-charcoal mb-2">Email (required)</label>
+                    <label className="block text-sm font-serif font-medium text-charcoal mb-2">Email (required)</label>
                     <input
                       type="email"
                       name="email"
@@ -127,7 +127,7 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-charcoal mb-2">Message (required)</label>
+                    <label className="block text-sm font-serif font-medium text-charcoal mb-2">Message (required)</label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -150,8 +150,8 @@ export default function Contact() {
                   {submitMessage && (
                     <div className={`mt-4 p-4 rounded-lg ${
                       submitMessage.includes('Thank you') 
-                        ? 'bg-green-100 text-green-800 border border-green-200' 
-                        : 'bg-red-100 text-red-800 border border-red-200'
+                        ? 'bg-green-100 text-green-800 font-serif border border-green-200' 
+                        : 'bg-red-100 text-red-800 font-serif border border-red-200'
                     }`}>
                       {submitMessage}
                     </div>

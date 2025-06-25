@@ -68,7 +68,7 @@ export default function Services() {
           alt="Chef services built around you"
           fill
           className="object-cover"
-          style={{ objectPosition: '50% 75%' }}
+          style={{ objectPosition: '50% 70%' }}
           priority
         />
         {/* Darkening overlay */}

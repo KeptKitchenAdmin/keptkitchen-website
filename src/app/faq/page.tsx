@@ -1,12 +1,52 @@
 'use client'
 
-import { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndexes, setOpenIndexes] = useState<Set<string>>(new Set())
+
+  // Debug: Check if component is even running
+  useEffect(() => {
+    console.log('FAQ component mounted')
+  }, [])
+
+  const toggleFAQ = (index: string) => {
+    setOpenIndexes(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(index)) {
+        newSet.delete(index)
+      } else {
+        newSet.add(index)
+      }
+      return newSet
+    })
+  }
+
+  const formatText = (text: string) => {
+    return text.split('\n').map((line, index) => {
+      const trimmedLine = line.trim()
+      if (trimmedLine === '') {
+        return <div key={index} className="h-4" />
+      }
+      if (trimmedLine.startsWith('• ')) {
+        return (
+          <div key={index} className="flex items-start mb-2">
+            <span className="text-espresso mr-3 mt-1 flex-shrink-0">•</span>
+            <span className="flex-1 leading-relaxed">{trimmedLine.substring(2)}</span>
+          </div>
+        )
+      }
+      return (
+        <div key={index} className="mb-3 leading-relaxed">
+          {trimmedLine}
+        </div>
+      )
+    })
+  }
 
   const faqs = [
     {
@@ -18,25 +58,81 @@ export default function FAQ() {
 
 Our clients include:
 • Executives & Founders who need meals handled with zero friction
-• Busy families balancing multiple schedules, children, activities, and nutrition needs
-• New parents navigating postpartum nutrition recovery with and new baby demands and no time to cook
+• Busy families balancing multiple schedules, children, activities, and nutrition needs  
+• New parents navigating postpartum nutrition recovery with new baby demands and no time to cook
 • Athletes & performance-driven professionals with custom macro or fuel goals
-• Dual-career households who want restaurant-quality meals at home, without outsourcing taste or control
-
-We're here to deliver meals that are thoughtful, nutrient-aligned, professionally executed, and always ready when you are.`
+• Dual-career households who want restaurant-quality meals at home, without outsourcing taste or control`
         },
         {
           q: 'How does weekly service work?',
-          a: 'We match you with a dedicated chef who prepares 3–5 entrées and optional add-ons in your home each week, based on weekly customized menus aligned to your dietary preferences, goals, and household schedule. Each entrée includes two large portions. Groceries are billed separately, and meals are labeled and stored in your fridge before we leave.'
+          a: `We match you with a dedicated chef who prepares 3–5 entrées and optional add-ons in your home each week, based on weekly customized menus aligned to your dietary preferences, goals, and household schedule. Each entrée includes two large portions. Groceries are billed separately, and meals are labeled and stored in your fridge before we leave.
+
+• Each week, if you have any special requests or edits to your weekly plan, please inform your chef by Thursday at 10pm.
+• Your chef will send you a custom menu every Friday by 5pm. You'll confirm your selections by Sunday evening at 5pm, and your invoice will follow on Monday for the upcoming week of service.
+• That week on your scheduled cook date, your chef will come to your home and prepare all your menu selections, neatly packaging them and storing them in your fridge for you!`
+        },
+        {
+          q: 'Can I request meals for specific dietary goals?',
+          a: `Absolutely. Your assigned chef will tailor menus each week to align with your dietary goals and preferences - whether you're looking for gluten-free, vegetarian, vegan, low-fat, high-protein, or other common lifestyle approaches. All meals are designed specifically for you and can reflect ingredient preferences, sensitivities, and nutritional priorities.
+
+We aim to create food that is not only tailored to your needs, but also deeply enjoyable, well-balanced, nutrient-dense, and sustainably deliverable each week. If you're unsure whether your needs are a fit, feel free to contact us and ask!`
+        },
+        {
+          q: 'How far in advance do I choose my menu?',
+          a: `You will choose your menu each week between Friday and Sunday evenings for service the following week.
+
+Have a special request for the week? Let your chef know by Thursday at 10pm!`
+        },
+        {
+          q: 'Do I need to be home when my chef arrives?',
+          a: 'Not unless you want to be! Many of our clients provide a key or access code for unattended service. We handle everything and leave your kitchen spotless.'
+        },
+        {
+          q: 'Do you offer service for special events or one-off occasions?',
+          a: 'Yes, for existing clients only. If you need elevated meal prep or intimate full-service catering for a small private dinner party, weekend guests, travel support, or a celebration at home, just let us know. All special requests are subject to chef availability, so please let us know 2 weeks in advance if possible.'
+        },
+        {
+          q: 'Can I split service across two cook days per week?',
+          a: 'We offer optional split service for clients who require the volume or two cook dates per week or would like their food refreshed midweek. This option is ideal for larger households or clients who value smaller, more frequent prep sessions. Clients with split service can also receive a discounted rate! Let us know during onboarding if you&apos;d like to request this.'
         },
         {
           q: 'Which areas do you service?',
           a: 'We currently service all of the Portland OR and Vancouver WA metro areas.'
+        },
+        {
+          q: 'Can I choose my own menu?',
+          a: `You'll receive a curated menu every Friday and can approve, swap, or make requests by Sunday evening. We build your meals around your goals, preferences, and lifestyle.
+
+Have a special request for your upcoming menu? Let your chef know on Thursday by 10pm!`
         }
       ]
     },
     {
-      category: 'Pricing & What\'s Included',
+      category: 'Add-Ons & Scheduling',
+      questions: [
+        {
+          q: 'What are the extra add-ons like? What is included?',
+          a: `Add-ons are optional and billed per serving in increments of 4–8. Add-on items are things like:
+
+• Breakfasts & small bites – chia pudding, overnight oats, egg muffins, frittatas, muffins, granola, etc.
+• Kid-favorite meals – compact, reheatable options like turkey meatballs, veggie mac, chicken tenders, sesame noodles, etc.
+
+Add-on options rotate weekly by default, but you can always request repeat favorites!`
+        },
+        {
+          q: 'How long will my weekly service take?',
+          a: 'Most cook days take anywhere from 3–8 hours depending on the number of entrees and add-ons. This time includes prepping, cooking, packaging, and cleaning. Time varies based on the weekly plans you&apos;ve chosen.'
+        },
+        {
+          q: 'When will my chef arrive? Can I schedule any time?',
+          a: `Arrival times are scheduled in advance. Chefs can arrive anywhere between 9am–3pm and are available 7-days a week. We'll do our best to accommodate your preferred day/time, depending on chef availability.
+
+If you would like to request arrival or departure times outside this time frame, please let us know during onboarding and we will do our best to accommodate.`
+        }
+      ]
+    },
+    {
+      category: 'Pricing & Groceries',
       questions: [
         {
           q: 'What\'s included in the weekly rate?',
@@ -47,194 +143,124 @@ All shopping, preparation, cooking, packaging, kitchen cleanup, and reheating in
 All that's billed separately are your grocery costs and any optional add-ons you choose.`
         },
         {
-          q: 'How much do groceries cost?',
-          a: 'Grocery costs vary depending on how many meals and extras you\'ve selected, the number of people we\'re cooking for, and whether you prefer conventional items or organic, grass-fed, or specialty ingredients. All grocery charges are billed separately based on actual receipts.'
-        },
-        {
-          q: 'What are the extra add-ons like? What is included?',
-          a: `Add-ons are optional and billed per serving in increments of 4–8. Add-on items are things like:
-• Breakfasts & small bites – chia pudding, overnight oats, egg muffins, frittatas, muffins, granola, etc.
-• Kid-favorite meals – compact, reheatable options like turkey meatballs, veggie mac, chicken tenders, sesame noodles, etc.
-
-Add-on options are rotate weekly by default, but you can always request repeat favorites!`
-        }
-      ]
-    },
-    {
-      category: 'Menu Planning & Dietary Needs',
-      questions: [
-        {
-          q: 'Can I request meals for specific dietary goals?',
-          a: `Absolutely. Your assigned chef will tailor menus each week to align with your dietary goals and preferences — whether you're looking for gluten-free, vegetarian, vegan, low-fat, high-protein, or other common lifestyle approaches. All meals are designed specifically for you and can reflect ingredient preferences, sensitivities, and nutritional priorities.
-
-We aim to create food that is not only tailored to your needs, but also deeply enjoyable, well-balanced, nutrient-dense, and sustainably deliverable each week. If you're unsure whether your needs are a fit, feel free to contact us and ask!`
-        },
-        {
-          q: 'How far in advance do I choose my menu?',
-          a: `Your chef will send your custom menu every Friday by 5pm. You'll confirm your selections by Sunday evening at 5pm. Your invoice will follow on Monday for the upcoming week of service.
-
-Have a special request for the week? Let your chef know by Thursday at 10pm!`
-        },
-        {
-          q: 'Can I choose my own menu?',
-          a: `You'll receive a curated menu every Friday and can approve, swap, or make requests by Sunday evening. We build your meals around your goals, preferences, and lifestyle.
-
-Have a special request for your upcoming menu? Let your chef know on Thursday by 10pm!`
-        },
-        {
           q: 'Can I purchase my own groceries for these meals?',
           a: 'Each menu is built around specific ingredients in precise quantities, and our chefs are trained to source exactly what\'s needed for your service. For that reason, we handle all grocery shopping on your behalf.'
+        },
+        {
+          q: 'How much do groceries cost?',
+          a: 'Grocery costs vary depending on how many meals and extras you\'ve selected, the number of people we\'re cooking for, and whether you prefer conventional items or organic, grass-fed, or specialty ingredients. We are happy to work with you to optimize grocery costs as much as possible. All grocery charges are billed separately based on actual receipts.'
         }
       ]
     },
     {
-      category: 'Scheduling & Logistics',
+      category: 'Cancellations & Rescheduling',
       questions: [
-        {
-          q: 'Do I need to be home when my chef arrives?',
-          a: 'Not unless you want to be! Many of our clients provide a key or access code for unattended service. We handle everything and leave your kitchen spotless.'
-        },
-        {
-          q: 'How long will my weekly service take?',
-          a: 'Most cook days take anywhere from 3–8 hours depending on the number of entrees and add-ons. This time includes prepping, cooking, packaging, and cleaning. Time varies based on the amount of meals you have chosen.'
-        },
-        {
-          q: 'When will my chef arrive? Can I schedule any time?',
-          a: `Arrival times are scheduled in advance. Chefs can arrive anywhere between 9am–3pm, and are available 7-days a week. We'll do our best to accommodate your preferred day/time, depending on chef availability and kitchen access.
-
-If you need arrival times outside this time frame, please let us know and we will do our best to accommodate.`
-        },
-        {
-          q: 'Can I split service across two cook days per week?',
-          a: `We offer optional split service for clients who require 10+ total portions (5–6+ entrees) per week, and prefer fresher food midweek. This option is ideal for larger households or clients who value smaller, more frequent prep sessions.
-
-Clients with split service can also receive a discounted rate! Let us know during onboarding if you'd like to request this.`
-        },
-        {
-          q: 'What if I need to reschedule my cook date same-week or just skip a week?',
-          a: `We understand that travel, illness, or unexpected scheduling conflicts can come up. Our goal is to be as accommodating as possible, while still preserving the consistency our chefs rely on.
-
-Rescheduling Within the Same Week: If you need to move your cook day within the same week, we require at least 48 hours' notice. We'll do our best to reschedule based on chef availability.
-
-Skipping a Full Week: If you need to skip a full week of service, please notify us by Thursday at 10:00pm for the following week.
-• Week-to-week clients: Skipped weeks will not be billed, and service will resume the following week.
-• 12-month agreements: Clients may skip up to 6 weeks per term.
-
-Skipped weeks do not extend your contract term.
-
-If a chef purchases groceries on your service day and you cancel, you will be billed for both the grocery cost and that week's service fee.
-
-We reserve ongoing chef availability for clients with consistent weekly service. Frequent skips may result in a loss of your reserved chef time or adjustments to your service schedule.`
-        }
-      ]
-    },
-    {
-      category: 'Special Requests & Cancellations',
-      questions: [
-        {
-          q: 'Do you offer service for special events or one-off occasions?',
-          a: 'Yes, for existing clients only. If you need elevated meal prep or intimate full-service catering for a small private dinner party, weekend guests, travel support, or a celebration at home, just let us know. All special requests are subject to chef availability.'
-        },
         {
           q: 'What happens if my chef is sick or needs to cancel?',
           a: 'In the rare event your chef must cancel, we make every effort to temporarily swap in another chef for your scheduled cook-time. Depending on timing and availability, we may need to shift your cook date or time. If we\'re unable to provide service that week, you won\'t be charged.'
         },
         {
           q: 'What if I need to cancel service? What is your cancellation policy?',
-          a: `Our cancellation policy depends on the type of service agreement you select:
+          a: `All clients must provide 30 days\' notice to cancel.
 
-Week-to-week clients must submit cancellation requests by Thursday at 10:00pm for the upcoming week. Cancellations after this cutoff will be billed as scheduled.
+For clients on 12-month agreements – If you request to terminate your agreement before the your agreement end date, the remaining contract balance will be billed in full.`
+        },
+        {
+          q: 'What if I need to reschedule my cook date same-week or just skip a week?',
+          a: `We understand that travel, illness, or unexpected scheduling conflicts can come up. Our goal is to be as accommodating as possible, while still preserving the consistency our chefs rely on.
 
-12-month agreement clients must provide 30 days' notice to cancel. If your agreement is terminated before the end date, the remaining contract balance will be billed in full.`
+Rescheduling Within the Same Week: If you need to move your cook day within the same week, we require at least 48 hours\' notice. We\'ll do our best to reschedule based on chef availability.
+
+Skipping a Full Week: If you need to skip a full week of service, please notify us by Thursday at 10:00pm the week prior. Skipped weeks will not be billed, and service will resume the following week.
+
+If a chef purchases groceries on your service day and you cancel, you will be billed for both the grocery cost and that week\'s service fee.
+
+Skipped weeks do not extend your contract term, and each client is allowed two skips per quarter. We reserve ongoing chef availability for clients with consistent weekly service. Frequent skips may result in a loss of your reserved chef time or adjustments to your service schedule.`
         }
       ]
     }
   ]
 
   return (
-    <div className="min-h-screen bg-warm-taupe/60">
-      <Navigation />
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 min-h-[60vh] flex items-center">
+    <div className="min-h-screen relative overflow-hidden">
+      <div className="fixed inset-0 z-0">
         <Image
-          src="/Extra Option4.jpg"
-          alt="Frequently Asked Questions"
+          src="/Homepage3 - notes from our clients.jpg"
+          alt="FAQ Background"
           fill
           className="object-cover"
-          style={{ objectPosition: '50% 50%' }}
+          style={{ objectPosition: '40% 30%' }}
           priority
         />
-        {/* Darkening overlay */}
-        <div className="absolute inset-0 bg-black/50 z-[5]" />
-        
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="relative inline-block">
-              <div className="absolute inset-0 -inset-x-2 -inset-y-1 bg-black/10 backdrop-blur-[2px] rounded-2xl"></div>
-              <h1 className="relative text-5xl md:text-6xl font-serif text-white mb-6 px-2 py-1">
+        <div className="absolute inset-0 bg-black/95" />
+      </div>
+      
+      <div className="relative z-10">
+        <Navigation />
+
+        <section className="relative pt-32 pb-8 px-6">
+          <div className="container mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
                 Frequently Asked Questions
               </h1>
-            </div>
-            <div className="relative inline-block">
-              <div className="absolute inset-0 -inset-x-2 -inset-y-1 bg-black/10 backdrop-blur-[2px] rounded-xl"></div>
-              <p className="relative text-xl text-white/90 font-serif font-light px-2 py-1">
+              <p className="text-xl text-white/90 font-serif font-light">
                 Still wondering how it works? We&apos;ve got you
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Content */}
-      <section className="py-20 px-6 bg-warm-taupe/80">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            {faqs.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="mb-16">
-                <h2 className="text-3xl font-serif text-espresso mb-8">{category.category}</h2>
-                <div className="space-y-4">
-                  {category.questions.map((faq, index) => {
-                    const globalIndex = categoryIndex * 100 + index
-                    return (
-                      <div 
-                        key={index}
-                        className="bg-ivory border border-warm-taupe/20 rounded-xl hover:shadow-md transition-all duration-300"
-                      >
-                        <button
-                          onClick={() => setOpenIndex(openIndex === globalIndex ? null : globalIndex)}
-                          className="w-full text-left p-6 flex justify-between items-start"
+        <section className="py-8 px-6 relative z-50">
+          <div className="container mx-auto">
+            <div className="max-w-3xl mx-auto">
+              {faqs.map((category, categoryIndex) => (
+                <div key={categoryIndex} className="mb-16">
+                  <h2 className="text-3xl font-serif text-white mb-8">{category.category}</h2>
+                  <div className="space-y-4">
+                    {category.questions.map((faq, index) => {
+                      const currentIndex = `${categoryIndex}-${index}`
+                      const isOpen = openIndexes.has(currentIndex)
+                      
+                      return (
+                        <div 
+                          key={index}
+                          className="border border-warm-taupe/20 rounded-xl" style={{ backgroundColor: '#F5F3F0' }}
                         >
-                          <h3 className="text-lg font-serif font-medium text-espresso pr-4">{faq.q}</h3>
-                          <svg 
-                            className={`w-5 h-5 text-espresso flex-shrink-0 transition-transform duration-300 ${
-                              openIndex === globalIndex ? 'rotate-180' : ''
-                            }`}
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              console.log('FAQ clicked:', currentIndex)
+                              toggleFAQ(currentIndex)
+                            }}
+                            className="w-full text-left p-6 flex justify-between items-start cursor-pointer hover:bg-ivory/90 transition-colors bg-transparent border-none relative z-10"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                        {openIndex === globalIndex && (
-                          <div className="px-6 pb-6">
-                            <div className="text-espresso font-serif font-light whitespace-pre-line leading-relaxed">
-                              {faq.a}
+                            <span className="text-lg font-serif font-medium text-espresso pr-4">{faq.q}</span>
+                            <span className="text-espresso text-xl font-bold flex-shrink-0">
+                              {isOpen ? '−' : '+'}
+                            </span>
+                          </button>
+                          {isOpen && (
+                            <div className="px-6 pb-6">
+                              <div className="text-espresso font-serif font-light">
+                                {formatText(faq.a)}
+                              </div>
                             </div>
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }

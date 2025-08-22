@@ -30,13 +30,17 @@ interface ServiceRequestForm {
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('Route started')
+    console.log('Route started - v2')
     const formData: ServiceRequestForm = await request.json()
-    console.log('JSON parsed successfully')
+    console.log('JSON parsed successfully - v2')
+    
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 })
+    }
     
     console.log('API key exists:', !!process.env.RESEND_API_KEY)
-    
-    // Use raw fetch instead of Resend SDK
+    console.log('API key length:', process.env.RESEND_API_KEY?.length)
+
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -44,8 +48,9 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
-        to: ['wren@thekeptkitchen.com'],
+        from: 'management@thekeptkitchen.com',
+        to: 'wren@thekeptkitchen.com',
+        reply_to: formData.email,
         subject: `New Service Request from ${formData.firstName} ${formData.lastName}`,
         html: `
           <h2>New Service Request Form Submission</h2>
@@ -131,18 +136,20 @@ export async function POST(request: NextRequest) {
       })
     })
 
-    console.log('Email response status:', emailResponse.status)
-    console.log('Email response ok:', emailResponse.ok)
-    
     if (!emailResponse.ok) {
       const errorText = await emailResponse.text()
-      console.error('Resend API error:', errorText)
-      return NextResponse.json({ error: 'Email failed to send' }, { status: 400 })
+      console.error('Resend API error status:', emailResponse.status)
+      console.error('Resend API error response:', errorText)
+      return NextResponse.json({ 
+        error: 'Email failed to send', 
+        details: errorText,
+        resendStatus: emailResponse.status,
+        testField: 'ERROR_LOGGING_WORKS' 
+      }, { status: 400 })
     }
 
     const emailResult = await emailResponse.json()
     console.log('Email sent successfully:', emailResult)
-    console.log('About to return success response')
     return NextResponse.json({ success: true })
     
   } catch (error) {

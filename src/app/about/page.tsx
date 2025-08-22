@@ -1,85 +1,57 @@
 'use client'
 
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function About() {
 
   return (
-    <div className="min-h-screen bg-bone">
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F3F0' }}>
       <Navigation />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-serif text-espresso mb-8 leading-tight">
-            About Kept Kitchen Co.
-          </h1>
-          <p className="text-xl text-espresso/80 font-serif font-light leading-relaxed max-w-3xl mx-auto">
-            We&apos;re a premium private chef service designed for busy households who value fresh, nutritious meals without the stress of planning, shopping, or cooking.
-          </p>
-        </div>
-      </section>
-
+      
       {/* Main Content */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-12">
-            <div>
-              <h2 className="text-3xl font-serif text-espresso mb-6">Founded by nutrition and culinary experts</h2>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-6">
-                Our team is led by founders with extensive backgrounds in nutrition consulting and culinary operations. That foundation shapes everything we do - from how we hire and train chefs to how we design meals and support long-term wellbeing.
-              </p>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed">
-                The result is food that&apos;s both deeply satisfying and designed to support your family&apos;s health and energy.
-              </p>
+      <section className="pt-32 pb-12 px-4 md:px-8 lg:px-12">
+        <div className="container mx-auto" style={{maxWidth: '1400px'}}>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-stretch">
+            
+            {/* Left Side - Content */}
+            <div className="space-y-8 pr-0 md:pr-4">
+              <h1 className="font-serif leading-tight text-center" style={{ fontSize: '64px', color: '#333333' }}>
+                About Us
+              </h1>
+              
+              <div className="space-y-6">
+                
+                <p className="text-base md:text-lg font-serif font-bold leading-relaxed" style={{ color: '#333333' }}>
+                  When meals are prepared with care and clarity, the impact is felt far beyond the kitchen.
+                </p>
+                
+                <p className="text-base md:text-lg font-serif leading-relaxed" style={{ color: '#333333' }}>
+                  Founded by nutrition and culinary experts with extensive backgrounds in nutrition consulting and culinary operations, our team brings a unique perspective that shapes everything we do - from how we hire and train chefs to how we design meals and support long-term wellbeing.
+                </p>
+                
+                <p className="text-base md:text-lg font-serif leading-relaxed" style={{ color: '#333333' }}>
+                  When meals are planned, prepared, and handled properly, the effects are felt across every part of your day: more energy, more control, and fewer decisions.
+                </p>
+              </div>
             </div>
-
-            <div>
-              <h2 className="text-3xl font-serif text-espresso mb-6">How we&apos;re different</h2>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-6">
-                Every detail is designed around busy households who value both quality and convenience.
-              </p>
+            
+            {/* Right Side - Image */}
+            <div className="relative h-full min-h-[500px] md:min-h-[600px] rounded-2xl overflow-hidden">
+              <Image
+                src="/about-image.jpg"
+                alt="Outdoor private dining setup with wine service for luxury meal experiences"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-
-            <div>
-              <h3 className="text-2xl font-serif text-espresso mb-4 font-medium">Expertly matched, thoroughly vetted</h3>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-8">
-                Every Kept chef is hand-selected for their culinary skill, professionalism, and presence in the home. We work only with seasoned chefs, compensate them well, and create an environment where they&apos;re genuinely invested in the families they serve.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-serif text-espresso mb-4 font-medium">Menus designed with care, built around you</h3>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-8">
-                Each week, your chef creates a menu tailored to your preferences, health goals, and evolving feedback. We prioritize organic seasonal ingredients and nutrient-dense selections - sourcing from trusted local vendors whenever possible.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-serif text-espresso mb-4 font-medium">A service shaped around real households</h3>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-8">
-                We serve high-performing homes of all kinds, from working parents to households with complex schedules. Whether it&apos;s meals your kids will actually eat, lunch ready to take with you, or dinner handled after a packed day, we tailor every detail to fit your rhythm.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-serif text-espresso mb-4 font-medium">We handle everything, so you don&apos;t have to</h3>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed mb-8">
-                From planning and shopping to cooking, packaging, and cleanup, your chef manages the full process. Meals are neatly prepared and stocked in your fridge, ready when you are. No coordination, no stress, no work on your part.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-serif text-espresso mb-6">Ready to transform your home life?</h2>
-              <p className="text-lg text-espresso/80 font-serif font-light leading-relaxed">
-                Join the families who&apos;ve made mealtime stress a thing of the past.
-              </p>
-            </div>
+            
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   )

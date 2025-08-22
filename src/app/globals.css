@@ -25,6 +25,12 @@
   --deep-brown: #1a1614;
   --sand: #f7f3ee;
   --soft-white: #fdfcfa;
+  --warm-gray: #8B8680;
+  --header-wall: #F1EFEC;
+  --table-wood: #D4C4B0;
+  --dark-sky: #B8B5B0;
+  --sophisticated-dark: #2A2A2A;
+  --refined-cream: #F4F1ED;
   
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -208,22 +214,22 @@ a:hover {
 
 /* Selection styling */
 ::selection {
-  background-color: var(--oak);
-  color: var(--white);
+  background-color: var(--bone);
+  color: var(--deep-charcoal);
 }
 
 ::-moz-selection {
-  background-color: var(--oak);
-  color: var(--white);
+  background-color: var(--bone);
+  color: var(--deep-charcoal);
 }
 
-/* Button animations */
-button {
+/* Button animations - exclude FAQ buttons */
+button:not([role="button"]):not(.faq-accordion-button) {
   position: relative;
   overflow: hidden;
 }
 
-button::before {
+button:not([role="button"]):not(.faq-accordion-button)::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -236,7 +242,35 @@ button::before {
   transition: width 0.6s, height 0.6s;
 }
 
-button:active::before {
+button:not([role="button"]):not(.faq-accordion-button):active::before {
   width: 300px;
   height: 300px;
 }
+
+/* FAQ accordion specific styles */
+.faq-accordion-button {
+  position: relative;
+  overflow: visible;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
+
+.faq-accordion-button::before {
+  display: none !important;
+}
+
+.faq-accordion-button:focus {
+  outline: 2px solid var(--warm-taupe);
+  outline-offset: 2px;
+}
+
+.faq-accordion-button:focus-visible {
+  outline: 2px solid var(--warm-taupe);
+  outline-offset: 2px;
+}
+
+/* Removed pointer-events: none that was blocking desktop clicks */

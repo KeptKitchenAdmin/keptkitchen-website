@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -59,28 +60,42 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-bone">
+    <div className="min-h-screen relative">
+      {/* Full page background image */}
+      <Image
+        src="/ContactUs_top_banner.jpg"
+        alt="Warm hospitality and luxury culinary service ambiance in Portland and Vancouver"
+        fill
+        className="object-cover"
+        style={{ objectPosition: '50% 50%' }}
+        priority
+      />
+      {/* Full page darkening overlay */}
+      <div className="absolute inset-0 bg-black/60 z-[5]" />
+      
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-6 px-6 bg-gradient-to-br from-maple/10 via-soft-white to-cream">
-        <div className="container mx-auto">
+      <section className="relative pt-32 pb-2 px-6 min-h-[40vh] flex items-center z-10">
+        <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-serif text-deep-charcoal mb-6 animate-fade-in-up">
-              Whether you&apos;re looking to partner with us, or just have a special question, we would love to hear from you!
+            <h1 className="text-3xl md:text-4xl font-serif text-white mb-6 animate-fade-in-up">
+              <span className="md:hidden">We would love to<br />hear from you!</span>
+              <span className="hidden md:inline">We would love to hear from you!</span>
             </h1>
-            <p className="text-xl text-charcoal font-serif font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
-              Looking to sign up for services? <Link href="/signup" className="text-maple hover:text-maple/80 underline transition-colors">Click here!</Link>
+            <p className="text-xl text-white font-serif font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
+              <span className="md:hidden">Looking to sign up for services?<br /><Link href="/signup" className="text-white underline hover:text-white/80 transition-colors italic">Click here</Link></span>
+              <span className="hidden md:inline">Looking to sign up for services? <Link href="/signup" className="text-white underline hover:text-white/80 transition-colors italic">Click here</Link></span>
             </p>
           </div>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="py-6 px-6">
+      <section className="pt-2 pb-12 px-6 relative z-10">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+            <div className="bg-white rounded-3xl p-8 md:p-12" style={{ boxShadow: '0 -5px 15px -3px rgba(0, 0, 0, 0.08), 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
               <h2 className="text-2xl font-serif text-deep-charcoal mb-6 text-center">Send a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
@@ -162,7 +177,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   )
 }

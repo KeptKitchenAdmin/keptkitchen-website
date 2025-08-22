@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /src/
+
+Sitemap: https://www.thekeptkitchen.com/sitemap.xml

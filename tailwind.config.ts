@@ -20,6 +20,12 @@ const config: Config = {
         'deep-brown': 'var(--deep-brown)',
         black: 'var(--black)',
         'soft-white': 'var(--soft-white)',
+        'warm-gray': 'var(--warm-gray)',
+        'header-wall': 'var(--header-wall)',
+        'table-wood': 'var(--table-wood)',
+        'dark-sky': 'var(--dark-sky)',
+        'sophisticated-dark': 'var(--sophisticated-dark)',
+        'refined-cream': 'var(--refined-cream)',
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Georgia', 'serif'],

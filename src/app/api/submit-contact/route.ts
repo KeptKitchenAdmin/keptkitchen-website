@@ -22,8 +22,9 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
-        to: ['wren@thekeptkitchen.com'],
+        from: 'management@thekeptkitchen.com',
+        to: 'wren@thekeptkitchen.com',
+        reply_to: formData.email,
         subject: `New Contact Message from ${formData.firstName} ${formData.lastName}`,
         html: `
           <h2>New Contact Message from Kept Kitchen Website</h2>

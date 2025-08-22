@@ -31,8 +31,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Section 1 - EXACT match to Homepage1.png layout */}
-      <section className="relative min-h-screen h-[120vh] flex items-center justify-center">
+      {/* Mobile Section 1 - Hero with image */}
+      <section className="relative h-[80vh] flex items-center justify-center md:hidden">
         <Image
           src="/Homepage1.jpg"
           alt="Private Chef Services for Elevated Home Life"
@@ -41,73 +41,83 @@ export default function Home() {
           style={{ objectPosition: '50% 35%' }}
           priority
         />
-        {/* Darkening overlay with blue tint */}
-        <div className="absolute inset-0 bg-black/40 z-[5]" />
+        <div className="absolute inset-0 z-10" style={{ backgroundColor: 'rgba(0, 0, 0, 0.35)' }} />
         
-        {/* Additional blue-tinted overlay */}
-        <div className="absolute inset-0 bg-blue-900/15 z-[6]" />
-        
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="relative inline-block">
-            {/* Very tight blur background behind main heading */}
-            <div className="absolute inset-0 -inset-x-2 -inset-y-1 bg-black/5 backdrop-blur-[1px] rounded-lg" />
-            <h1 className="relative text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight font-light px-2 py-1">
-              Private Chef Services for<br />Elevated Home Life
-            </h1>
-          </div>
-          <div className="relative inline-block">
-            {/* Very subtle blurred background box with seamless edges */}
-            <div className="absolute inset-0 -inset-x-4 -inset-y-2 bg-black/5 backdrop-blur-[1px] rounded-2xl" />
-            <p className="relative text-lg md:text-xl text-white mb-8 font-serif font-bold leading-relaxed max-w-5xl mx-auto px-4 py-2 whitespace-nowrap">
-              For families and professionals who value time, nourishment, and peace of mind —<br />
-              we bring rhythm back to the dinner table.
-            </p>
-          </div>
-          <Link href="/signup">
-            <button className="bg-white/80 hover:bg-white/90 text-black font-serif font-medium py-2 px-8 rounded-full text-base transition-colors duration-300 backdrop-blur-sm">
-              Sign Up for Services
+        <div className="relative z-20 text-center px-6 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-serif text-white mb-4 leading-tight font-light">
+            Private Chef Services for<br />Elevated home life
+          </h1>
+          <p className="text-base text-white mb-6 font-serif leading-relaxed">
+            In-Home Culinary Excellence for Families,<br />Executives, and Food Lovers
+          </p>
+          <Link href="/services">
+            <button className="bg-white/90 hover:bg-white text-black font-serif py-2 px-6 rounded-full text-sm font-medium transition-colors duration-300 shadow-lg">
+              Explore Our Services
             </button>
           </Link>
         </div>
       </section>
 
-      {/* Section 2 - EXACT match to Homepage2.png layout */}
-      <section className="relative h-[100vh] flex items-center">
+      {/* Desktop Section 1 - Hero with image */}
+      <section className="relative min-h-screen h-[120vh] flex items-center justify-center hidden md:flex">
         <Image
-          src="/Homepage2.jpg"
-          alt="Your kitchen, kept to the highest standard"
+          src="/Homepage1.jpg"
+          alt="Private Chef Services for Elevated Home Life"
           fill
           className="object-cover"
-          style={{ objectPosition: '50% 70%' }}
+          style={{ objectPosition: '50% 35%' }}
+          priority
         />
-        {/* Darkening overlay with blue tint */}
-        <div className="absolute inset-0 bg-black/40 z-[5]" />
+        <div className="absolute inset-0 z-10" style={{ backgroundColor: 'rgba(0, 0, 0, 0.35)' }} />
         
-        {/* Additional blue-tinted overlay */}
-        <div className="absolute inset-0 bg-blue-900/15 z-[6]" />
-        
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-          <div className="absolute right-12 top-1/2 transform -translate-y-1/2 max-w-xl" style={{ transform: 'translateY(-50%) translateY(-32px)' }}>
-            <h2 className="text-4xl md:text-5xl font-serif text-black mb-6 leading-tight font-normal text-center">
-              Your kitchen, kept to the<br />highest standard.
-            </h2>
-            <p className="text-base md:text-lg text-black mb-4 font-serif leading-relaxed text-left max-w-lg">
-              We provide weekly chef services that give back your time, nourish your body, and support your home - bringing relief, not more to manage.
-            </p>
-            <p className="text-sm md:text-base text-black mb-8 font-serif leading-relaxed text-left max-w-lg">
-              We tailor our service to your routines, your space, and your standards. From planning and shopping to cooking and cleanup, we handle the details so you can spend your time on other things.
-            </p>
-            <div className="flex justify-center">
-              <Link href="/services">
-                <button className="bg-white/80 hover:bg-white/90 text-black font-serif py-1.5 px-6 rounded-full text-sm transition-colors duration-300 backdrop-blur-sm">
-                  Explore Our Services
-                </button>
-              </Link>
-            </div>
-          </div>
+        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight font-light">
+            Private Chef Services for<br />Elevated home life
+          </h1>
+          <p className="text-xl md:text-3xl text-white mb-8 font-serif leading-relaxed">
+            In-Home Culinary Excellence for Families,<br />Executives, and Food Lovers
+          </p>
+          <Link href="/services">
+            <button className="bg-white/90 hover:bg-white text-black font-serif font-medium py-3 px-8 rounded-full text-base transition-colors duration-300 shadow-lg">
+              Explore Our Services
+            </button>
+          </Link>
         </div>
       </section>
 
+      {/* Mobile Section 2 - Gray background, no image */}
+      <section className="py-16 px-6 md:hidden" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="max-w-lg mx-auto text-center">
+          <h2 className="text-2xl font-serif text-gray-800 mb-6 leading-tight">
+            Experienced Chefs, Locally Sourced Ingredients, and Elevated Menus Tailored to Your Home
+          </h2>
+          <p className="text-base text-gray-700 mb-8 font-serif leading-relaxed">
+            We provide weekly chef services that give back your time, nourish your body, and support your home, bringing relief, not more to manage. We tailor our services to your routines, your space, and your standards. From planning and shopping to cooking and cleanup, we handle every detail so you can spend your time elsewhere.
+          </p>
+          <Link href="/services">
+            <button className="bg-gray-800 hover:bg-gray-700 text-white font-serif py-3 px-6 rounded-full text-sm font-medium transition-colors duration-300">
+              Explore Our Services
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Desktop Section 2 - Gray background, no image */}
+      <section className="py-20 px-6 hidden md:block" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8 leading-tight">
+            Experienced Chefs, Locally Sourced Ingredients, and Elevated Menus Tailored to Your Home
+          </h2>
+          <p className="text-lg text-gray-700 mb-10 font-serif leading-relaxed max-w-3xl mx-auto">
+            We provide weekly chef services that give back your time, nourish your body, and support your home, bringing relief, not more to manage. We tailor our services to your routines, your space, and your standards. From planning and shopping to cooking and cleanup, we handle every detail so you can spend your time elsewhere.
+          </p>
+          <Link href="/services">
+            <button className="bg-gray-800 hover:bg-gray-700 text-white font-serif py-3 px-8 rounded-full text-base font-medium transition-colors duration-300">
+              Explore Our Services
+            </button>
+          </Link>
+        </div>
+      </section>
 
       <Footer />
     </div>

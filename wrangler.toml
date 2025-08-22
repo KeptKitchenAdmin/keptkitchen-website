@@ -10,3 +10,9 @@ binding = "ASSETS"
 [[routes]]
 pattern = "www.thekeptkitchen.com/*"
 zone_name = "thekeptkitchen.com"
+
+[vars]
+# Non-sensitive environment variables can go here
+
+# For secrets (like API keys), use wrangler secret commands:
+# wrangler secret put RESEND_API_KEY

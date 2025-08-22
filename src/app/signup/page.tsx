@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -131,20 +132,59 @@ export default function SignUp() {
   }
 
   return (
-    <div className="min-h-screen bg-bone">
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F3F0' }}>
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6 bg-gradient-to-br from-maple/20 via-warm-taupe/10 to-clay/15">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-serif text-deep-charcoal mb-6 animate-fade-in-up">
-              Now Accepting Clients for Fall 2025
+      {/* Hero Section - Larger banner */}
+      <section className="relative -mt-20">
+        <div className="relative h-[60vh] min-h-[500px] pt-20 overflow-hidden">
+          <Image
+            src="/Sign up banner.jpg"
+            alt="Pacific Northwest in-home fine dining ambiance with in-home private chef services"
+            fill
+            className="object-cover"
+            style={{ objectPosition: '50% 75%' }}
+            priority
+            quality={100}
+          />
+          {/* Title Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center z-10" style={{transform: 'translateY(20px)'}}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white text-center leading-tight px-4">
+              <span className="md:hidden">Now Accepting Clients<br />for Fall 2025</span>
+              <span className="hidden md:inline">Now Accepting Clients for Fall 2025</span>
             </h1>
-            <p className="text-xl text-charcoal font-serif font-light animate-fade-in-up mb-4" style={{ animationDelay: '0.2s' }}>
+          </div>
+          {/* SVG mask for curved bottom */}
+          <svg 
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 400 300"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <mask id="curved-mask">
+                <rect width="400" height="300" fill="white" />
+                <path d="M0,220 Q200,280 400,220 L400,300 L0,300 Z" fill="black" />
+              </mask>
+            </defs>
+            <rect 
+              width="400" 
+              height="300" 
+              fill="white" 
+              mask="url(#curved-mask)"
+              style={{ mixBlendMode: 'multiply' }}
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* Content Section - More space from header */}
+      <section className="pt-8 md:pt-12 pb-4 px-6 md:px-6">
+        <div className="container mx-auto">
+          <div className="max-w-5xl mx-auto text-center mb-8">
+            <p className="text-base md:text-xl text-deep-charcoal font-serif font-light mb-2 leading-relaxed">
               If you&apos;re interested in securing a spot, please take a moment to fill out our Service Request Form.
             </p>
-            <p className="text-lg text-charcoal font-serif font-light italic animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <p className="text-base md:text-xl text-deep-charcoal font-serif font-light leading-relaxed">
               We will be reviewing all submissions personally and will reach out as soon as possible.
             </p>
           </div>
@@ -152,10 +192,10 @@ export default function SignUp() {
       </section>
 
       {/* Form Section */}
-      <section className="py-12 px-6">
+      <section className="pt-2 pb-8 px-6">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+            <div className="bg-white rounded-3xl p-8 md:p-12" style={{ boxShadow: '0 -5px 15px -3px rgba(0, 0, 0, 0.08), 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Name */}
                 <div>
@@ -359,7 +399,7 @@ export default function SignUp() {
                 {/* Ideal Days */}
                 <div>
                   <label className="block text-sm font-serif font-medium text-charcoal mb-2">
-                    What would be your ideal in-home cook or delivery day(s)?
+                    What would be your ideal in-home cook day(s)?
                   </label>
                   <p className="text-sm font-serif text-gray-600 mb-4">Please check all that apply</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">

@@ -186,13 +186,13 @@ Skipped weeks do not extend your contract term, and each client is allowed two s
       <div className="fixed inset-0 z-0">
         <Image
           src="/Homepage3 - notes from our clients.jpg"
-          alt="FAQ Background"
+          alt="Premium wine pairings and cellar selections for in-home culinary experiences"
           fill
           className="object-cover"
           style={{ objectPosition: '40% 30%' }}
           priority
         />
-        <div className="absolute inset-0 bg-black/95" />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }} />
       </div>
       
       <div className="relative z-10">
@@ -211,7 +211,7 @@ Skipped weeks do not extend your contract term, and each client is allowed two s
           </div>
         </section>
 
-        <section className="py-8 px-6 relative z-50">
+        <section className="py-8 px-6 relative z-20">
           <div className="container mx-auto">
             <div className="max-w-3xl mx-auto">
               {faqs.map((category, categoryIndex) => (

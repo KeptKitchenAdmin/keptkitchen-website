@@ -11,7 +11,7 @@ export default function Footer() {
             <p className="footer-tagline font-serif text-xs text-white mb-3">Portland&apos;s Premier Private Chef Services</p>
           </div>
           
-          <div className="flex justify-center space-x-8 text-center">
+          <div className="grid grid-cols-2 gap-4 text-center">
             <div>
               <h4 className="font-serif text-sm font-medium text-stone-300 mb-1">Now Serving</h4>
               <p className="footer-tagline font-serif text-xs text-white">Portland & Vancouver</p>
@@ -20,35 +20,75 @@ export default function Footer() {
               <h4 className="font-serif text-sm font-medium text-stone-300 mb-1">Contact</h4>
               <a 
                 href="mailto:management@thekeptkitchen.com" 
-                className="font-serif text-xs text-white hover:text-warm-taupe transition-colors block"
+                className="font-serif text-xs text-white hover:text-stone-300 transition-colors block"
               >
                 Contact Us
               </a>
             </div>
           </div>
+          
+          <div className="text-center">
+            <h4 className="font-serif text-sm font-medium text-stone-300 mb-2">Explore</h4>
+            <div className="font-serif text-xs text-white leading-relaxed">
+              <div>
+                <Link href="/services" className="hover:text-stone-300 transition-colors">Services</Link>
+                <span className="mx-1">·</span>
+                <Link href="/gallery" className="hover:text-stone-300 transition-colors">Gallery</Link>
+                <span className="mx-1">·</span>
+                <Link href="/sample-menus" className="hover:text-stone-300 transition-colors">Sample Menus</Link>
+                <span className="mx-1">·</span>
+                <Link href="/faq" className="hover:text-stone-300 transition-colors">FAQ</Link>
+              </div>
+              <div className="mt-1">
+                <Link href="/how-it-works" className="hover:text-stone-300 transition-colors">How It Works</Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid grid-cols-3 gap-6">
-          <div className="space-y-1">
-            <h3 className="font-serif text-2xl text-stone-300">Kept Kitchen Co.</h3>
+        <div className="hidden md:grid grid-cols-4 gap-6">
+          <div className="flex flex-col">
+            <h3 className="font-serif text-2xl text-stone-300 mb-1">Kept Kitchen Co.</h3>
             <p className="footer-tagline font-serif text-sm text-white">Portland&apos;s Premier Private Chef Services</p>
           </div>
           
-          <div className="space-y-1">
-            <h4 className="font-serif text-base font-medium text-stone-300">Now Serving</h4>
-            <p className="footer-tagline font-serif text-sm text-white">Portland, Vancouver, and surrounding areas.</p>
+          <div className="flex flex-col">
+            <div className="h-8 flex items-end">
+              <h4 className="font-serif text-base font-medium text-stone-300">Now Serving</h4>
+            </div>
+            <p className="footer-tagline font-serif text-sm text-white mt-1">Portland, Vancouver, and surrounding areas.</p>
           </div>
           
-          <div className="space-y-2">
-            <h4 className="font-serif text-base font-medium text-stone-300">Contact</h4>
-            <div className="space-y-1">
-              <a 
-                href="mailto:management@thekeptkitchen.com" 
-                className="font-serif text-sm text-white hover:text-warm-taupe transition-colors block"
-              >
-                Management@thekeptkitchen.com
-              </a>
+          <div className="flex flex-col">
+            <div className="h-8 flex items-end">
+              <h4 className="font-serif text-base font-medium text-stone-300">Contact</h4>
+            </div>
+            <a 
+              href="mailto:management@thekeptkitchen.com" 
+              className="font-serif text-sm text-white hover:text-stone-300 transition-colors block mt-1"
+            >
+              Management@thekeptkitchen.com
+            </a>
+          </div>
+          
+          <div className="flex flex-col">
+            <div className="h-8 flex items-end">
+              <h4 className="font-serif text-base font-medium text-stone-300">Explore</h4>
+            </div>
+            <div className="font-serif text-sm text-white leading-relaxed mt-1">
+              <div>
+                <Link href="/services" className="hover:text-stone-300 transition-colors">Services</Link>
+                <span className="mx-1">·</span>
+                <Link href="/gallery" className="hover:text-stone-300 transition-colors">Gallery</Link>
+                <span className="mx-1">·</span>
+                <Link href="/sample-menus" className="hover:text-stone-300 transition-colors">Sample Menus</Link>
+                <span className="mx-1">·</span>
+                <Link href="/faq" className="hover:text-stone-300 transition-colors">FAQ</Link>
+              </div>
+              <div className="mt-1">
+                <Link href="/how-it-works" className="hover:text-stone-300 transition-colors">How It Works</Link>
+              </div>
             </div>
           </div>
         </div>

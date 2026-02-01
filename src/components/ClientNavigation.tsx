@@ -26,7 +26,6 @@ export default function ClientNavigation() {
     { href: '/blog', label: 'Blog' },
     { href: '/signup', label: 'Sign Up' },
     { href: '/contact', label: 'Contact' },
-    { href: '/faq', label: 'FAQ' },
   ]
 
   const needsLightText = true

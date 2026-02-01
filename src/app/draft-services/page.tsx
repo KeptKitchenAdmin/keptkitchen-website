@@ -164,7 +164,7 @@ export default function DraftServices() {
                     Whether you&apos;re planning shared meals with family or simply prefer more frequent private chef service, we&apos;ll tailor a schedule that fits your rhythm and lifestyle. Just let us know during onboarding.
                   </p>
                   <Link href="/signup" className="inline-block mt-4 bg-espresso text-white px-4 py-2 rounded-lg hover:bg-espresso/90 transition-colors font-serif">
-                    Get Started with a new-client intake form
+                    Book a Consultation
                   </Link>
                 </div>
               </div>

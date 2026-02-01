@@ -82,66 +82,59 @@ export default function Services() {
 
       
       {/* Part 2: Service Overview */}
-      <section className="py-12 px-6">
-        <div className="container mx-auto">
-          <div className="max-w-7xl mx-auto">
+      <section className="py-8 lg:py-12 px-4 lg:px-6 xl:px-8 2xl:px-16">
+        <div className="w-full">
+          <div className="w-full">
             
             {/* Private Chef Service Plans - Full Width */}
-            <div className="mb-12">
-              <div className="bg-white border border-warm-taupe/20 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-3xl font-serif font-bold text-espresso mb-6">Private Chef Service Plans & Pricing</h3>
+            <div className="mb-8 lg:mb-12 w-full">
+              <div className="bg-white border border-warm-taupe/20 rounded-xl p-6 lg:p-8 hover:shadow-lg transition-all duration-300 w-full">
+                <h3 className="text-3xl font-serif font-bold text-espresso mb-6">Our Services</h3>
                 <div className="space-y-4 text-espresso font-serif leading-relaxed">
-                  <p>Weekly service plans start at <span className="font-bold">$499/week</span> and vary based on food volume, weekly service frequency, custom add-ons, and commitment length. Premium service tiers with expanded offerings and frequent weekly in-home visits may range up to $1,200+/week.</p>
-                  <p>Discounted rates are available for clients on 6- or 12-month commitments.</p>
+                  <p>Kept Kitchen Co. offers two ways to work with a private chef. Both are held to the same standard of cooking and professionalism. Each tier differs by service flexibility, frequency, and access to your chef.</p>
                 </div>
               </div>
             </div>
 
             {/* Two Column Layout for remaining content */}
-            <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 w-full">
               
               {/* Left Column - Service Information */}
               <div className="space-y-6">
                 
                 {/* Service Range */}
-                <div className="bg-white border border-warm-taupe/20 rounded-xl p-8">
+                <div className="bg-white border border-warm-taupe/20 rounded-xl p-6 lg:p-8 w-full">
                   <div className="text-left">
-                    <span className="text-2xl font-serif text-espresso font-bold">Weekly Base Service Plans</span>
-                    <p className="text-lg font-serif text-espresso mt-4 mb-4">3, 4, or 5 Entrée Base (6, 8, or 10 servings)</p>
-                    <p className="text-sm text-espresso/70 font-serif italic">
-                      Each entrée includes two large portions.
-                    </p>
-                    <p className="text-sm text-espresso/70 font-serif italic">
-                      Groceries billed separately.
-                    </p>
-                  </div>
-                  
-                  <div className="mt-8 pt-8 border-t border-warm-taupe/20">
-                  <div className="text-left">
-                    <h3 className="text-xl font-serif font-bold text-espresso mb-2">Optional Add-Ons</h3>
-                    <p className="text-espresso/80 mb-6 font-serif"><em>Supplement your weekly meals with chef-prepared extras</em></p>
-                    <div className="text-left space-y-3 mb-4">
-                      <p className="text-espresso font-serif">• Breakfast / Snack Add-On (4 or 6 serving options)</p>
-                      <p className="text-espresso font-serif">• Kid-Favorite Meals Add-On (4 or 6 serving options)</p>
-                    </div>
-                    <p className="text-espresso/70 font-serif text-sm leading-relaxed mb-2">
-                      Curious about what kinds of things our chefs list in these menu add-ons? Check out our example menus here.
-                    </p>
-                    <p className="text-xs text-espresso/60 font-serif italic">
-                      Kid portions are about 1/2 the size of our standard large adult portions
-                    </p>
-                  </div>
+                    <span className="text-2xl font-serif text-espresso font-bold">Weekly Culinary Service</span>
+                    <p className="text-lg font-serif text-espresso mt-4 mb-4 italic">Designed for clients who prefer one or two structured cook days per week, with meals prepared in their home by a dedicated chef and enjoyed over several days.</p>
+                    
+                    <p className="text-lg font-serif text-espresso mt-4 mb-4">One or two days per week, your dedicated chef comes to your home to prepare a selection of meals you&apos;ve chosen from menus shaped around your tastes, dietary needs, and health goals. Those meals are then ready to support the days ahead - for family dinners, workdays, busy evenings, or grab-and-go moments.</p>
+                    
+                    <p className="text-lg font-serif text-espresso mt-4 mb-4">Clients choose this service because it removes the recurring stress of meal planning, grocery shopping, and daily cooking, while ensuring they consistently eat well. It fits naturally into demanding schedules and does not require you to be home during cooking sessions.</p>
+                    
+                    <p className="text-lg font-serif text-espresso mt-4 mb-4">Over time, your chef becomes familiar with your tastes and preferences, making each week easier and more supportive than the last.</p>
+                    
+                    <p className="text-lg font-serif text-espresso mt-4 mb-4 font-medium">This is our most popular service and the foundation of how many clients work with us, offering consistent private chef support through defined weekly engagements.</p>
                   </div>
                 </div>
 
-                {/* Multiple Visits */}
-                <div className="bg-white border border-warm-taupe/20 rounded-xl p-8">
-                  <h4 className="text-xl font-serif font-bold text-espresso mb-4">Prefer multiple chef visits per week?</h4>
+                {/* Signature Private Service */}
+                <div className="bg-white border border-warm-taupe/20 rounded-xl p-6 lg:p-8 w-full">
+                  <h4 className="text-xl font-serif font-bold text-espresso mb-4">The Signature Private Service</h4>
                   <p className="text-espresso font-serif font-light mb-4 leading-relaxed">
-                    For households that enjoy smaller-batch cooking, added flexibility, or an enhanced in-home presence, we offer custom service plans with multiple chef visits per week. 
+                    This is our most immersive level of private chef engagement, allowing for more customizable services, and expanded access to your chef.
                   </p>
                   <p className="text-espresso font-serif font-light mb-4 leading-relaxed">
-                    Whether you&apos;re planning shared meals with family or simply prefer more frequent private chef service, we&apos;ll tailor a schedule that fits your rhythm and lifestyle. Just let us know during onboarding.
+                    Rather than booking individual cooking sessions, clients engage their chef on a weekly retainer, reserving a custom number of hours each week that can be applied as needed. This structure allows you to apply your chef&apos;s time throughout the week in a more fluid, custom way, on a day-to-day basis, accommodating changing schedules, and supporting your dietary needs throughout the week.
+                  </p>
+                  <p className="text-espresso font-serif font-light mb-4 leading-relaxed">
+                    Some clients prefer to continue working from planned menus; others rely on their chef to cook intuitively based on established preferences, dietary needs, and day-to-day requests. Both approaches are supported, and many households move between them naturally over time.
+                  </p>
+                  <p className="text-espresso font-serif font-light mb-4 leading-relaxed">
+                    This service is chosen by clients who want flexibility, frequency, and the ability to direct their chef&apos;s time toward what matters most in a given week — whether that&apos;s daily meals, specific dietary support, or special occasions.
+                  </p>
+                  <p className="text-espresso font-serif font-light mb-4 leading-relaxed">
+                    Clients typically utilize this service between 12–35 hours per week, depending on your needs and preferred level of chef involvement.
                   </p>
                   <Link href="/signup" className="inline-block mt-4 bg-espresso text-white px-4 py-2 rounded-lg hover:bg-espresso/90 transition-colors font-serif">
                     Get Started with a new-client intake form
@@ -149,77 +142,35 @@ export default function Services() {
                 </div>
               </div>
               
-              {/* Right Column - Image */}
-              <div className="flex">
-                <Image
-                  src="/IMESSAGE_PREVIEW.jpg"
-                  alt="Elegant private dining table setting with wine glasses and gourmet appetizers"
-                  width={600}
-                  height={1200}
-                  className="rounded-xl object-cover w-full h-full"
-                />
+              {/* Right Column - Images sized to match corresponding text boxes */}
+              <div className="space-y-6">
+                {/* Image 1 - taller to match Weekly Culinary Service box */}
+                <div className="rounded-xl overflow-hidden">
+                  <Image
+                    src="/IMESSAGE_PREVIEW.jpg"
+                    alt="Elegant private dining table setting with wine glasses and gourmet appetizers"
+                    width={600}
+                    height={500}
+                    className="object-cover w-full h-[400px] lg:h-[500px] rounded-xl"
+                  />
+                </div>
+                
+                {/* Image 2 - full size natural display */}
+                <div className="rounded-xl overflow-hidden">
+                  <Image
+                    src="/nataliya-melnychuk-NDfAjk9Mfek-unsplash copy.jpg"
+                    alt="Beautiful culinary presentation with fresh ingredients"
+                    width={600}
+                    height={800}
+                    className="w-full h-auto rounded-xl"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section Title with Background Image */}
-      <section className="relative" style={{padding: '3rem 1.5rem'}}>
-        <Image
-          src="/jivitharsan-suresh-Nm4NP4s78Hg-unsplash.jpg"
-          alt="Elegant culinary ingredients and preparation"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}></div>
-        <div className="container mx-auto relative z-10">
-          {/* Mobile Header */}
-          <div className="text-center md:hidden">
-            <h2 className="text-3xl font-serif font-light text-white mb-6 opacity-90 leading-tight px-4">
-              <span className="whitespace-nowrap">What to Expect from Our</span><br /><span className="whitespace-nowrap">In-Home Chef Experience</span>
-            </h2>
-          </div>
-          
-          {/* Desktop Header */}
-          <div className="hidden md:block text-center">
-            <h2 style={{fontSize: '4.5rem', fontFamily: 'var(--font-serif)', fontWeight: '300', color: 'white', marginBottom: '2rem', opacity: '0.9', lineHeight: '1.4'}}>
-              What to Expect
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      {/* What to Expect from Our In-Home Chef Experience */}
-      <section className="py-12 px-6">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* Left Column - Description */}
-              <div className="">
-                <p className="text-lg text-espresso font-serif font-light mb-6 leading-relaxed">
-                  We offer private in-home chef services for households seeking exceptional, thoughtfully prepared meals without the time investment on planning, shopping, prepping, cooking, or cleaning. Each week, you&apos;ll receive custom menus and dedicated attention from your assigned chef — tailored to your preferences, schedule, and household needs.
-                </p>
-                <p className="text-lg text-espresso font-serif font-light mb-6 leading-relaxed">
-                  Service is designed to be flexible: cook days can repeat weekly or shift based on your calendar. Your chef handles everything from planning and shopping to cleanup, delivering a seamless, high-touch experience that evolves with you.
-                </p>
-                <p className="text-lg text-espresso font-serif font-light mb-6 leading-relaxed">
-                  Whether you&apos;re looking to nourish your family, streamline your week, or elevate your everyday meals, your chef is there to create a seamless, high-touch experience that evolves with you.
-                </p>
-                <p className="text-lg text-espresso font-serif font-bold mb-6 leading-relaxed">
-                  Welcome to elevated living, one meal at a time.
-                </p>
-              </div>
-
-              {/* Right Column - Accordion Steps */}
-              <ServicesAccordion steps={steps} />
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* Full Background Image Section with Special Occasions Content */}
       
@@ -236,14 +187,16 @@ export default function Services() {
         <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}></div>
         
         <div className="absolute inset-0 flex items-start justify-center z-10 px-4 pt-12">
-          <div className="text-center max-w-md mx-auto">
+          <div className="text-center w-full max-w-4xl mx-auto">
             <h4 className="text-xl font-serif font-bold text-white mb-4">Hosting a special occasion?</h4>
             <p className="text-white font-serif font-light mb-4 leading-relaxed text-base">
               We offer private chef services for intimate gatherings, celebratory dinners, or wine-paired evenings with friends — exclusively for existing clients. From coursed menus to grazing tables, our chefs will create a bespoke culinary experience in your home.
             </p>
-            <p className="text-xs text-white/90 font-serif italic">
-              Availability is limited. <Link href="/contact" className="underline hover:text-white/80 transition-colors font-medium">Contact us to inquire about custom pricing.</Link>
-            </p>
+            <Link href="/contact">
+              <button className="bg-espresso hover:bg-espresso/90 text-white font-serif py-3 px-8 rounded-full text-base font-medium transition-colors duration-300 shadow-lg mt-4">
+                Contact Us To Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -263,34 +216,20 @@ export default function Services() {
         <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}></div>
         
         <div className="absolute inset-0 flex items-start justify-center z-10 pt-40">
-          <div className="text-center px-6 max-w-5xl mx-auto">
+          <div className="text-center px-6 w-full max-w-7xl mx-auto">
           <h4 className="text-5xl md:text-6xl font-serif font-bold text-white mb-8">Hosting a special occasion?</h4>
           <p className="text-white font-serif font-light mb-8 leading-relaxed text-2xl md:text-3xl">
             We offer private chef services for intimate gatherings, celebratory dinners, or wine-paired evenings with friends — exclusively for existing clients. From coursed menus to grazing tables, our chefs will create a bespoke culinary experience in your home.
           </p>
-          <p className="text-sm md:text-base text-white/90 font-serif italic">
-            Availability is limited. <Link href="/contact" className="underline hover:text-white/80 transition-colors font-medium">Contact us to inquire about custom pricing.</Link>
-          </p>
+          <Link href="/contact">
+            <button className="bg-espresso hover:bg-espresso/90 text-white font-serif py-3 px-8 rounded-full text-lg font-medium transition-colors duration-300 shadow-lg mt-6">
+              Contact Us To Get Started
+            </button>
+          </Link>
           </div>
         </div>
       </section>
 
-      {/* Waitlist Section */}
-      <section className="py-12 px-6" style={{ backgroundColor: '#F5F3F0' }}>
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white border border-warm-taupe/20 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-              <h4 className="text-2xl font-serif font-bold text-espresso mb-4">Join the waitlist to begin</h4>
-              <p className="text-espresso font-serif mb-6 leading-relaxed">We&apos;ll follow up to schedule a kitchen-assessment, discuss your dietary preferences, needs, pricing, and answer all your questions before matching you with your dedicated chef.</p>
-              <Link href="/signup">
-                <button className="bg-espresso hover:bg-espresso/90 text-white font-serif py-3 px-8 rounded-full text-base font-medium transition-colors duration-300 shadow-lg">
-                  Join Our Waitlist
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

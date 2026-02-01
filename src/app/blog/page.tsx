@@ -77,22 +77,6 @@ export default function Blog() {
               </article>
             </Link>
 
-            <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-400 font-serif">Coming Soon</span>
-              </div>
-              <div className="p-6">
-                <h2 className="font-serif text-xl mb-3" style={{ color: '#333333' }}>
-                  Another Post
-                </h2>
-                <p className="text-gray-600 font-serif leading-relaxed mb-4">
-                  Stay tuned for insights on seasonal menus, locally sourced ingredients, and nutrition tips.
-                </p>
-                <div className="text-sm text-gray-500 font-serif">
-                  Coming Soon
-                </div>
-              </div>
-            </article>
 
           </div>
           

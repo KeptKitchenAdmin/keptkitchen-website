@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -65,23 +66,17 @@ Our clients include:
         },
         {
           q: 'How does weekly service work?',
-          a: `We match you with a dedicated chef who prepares 3–5 entrées and optional add-ons in your home each week, based on weekly customized menus aligned to your dietary preferences, goals, and household schedule. Each entrée includes two large portions. Groceries are billed separately, and meals are labeled and stored in your fridge before we leave.
+          a: `We match you with a dedicated chef who prepares meals in your home on a recurring schedule. Depending on your needs, this could be one set cook day per week, multiple visits, or daily coverage. Each week, your chef sends a custom menu based on your preferences; you select what you'd like, and they handle the rest: shopping, cooking, cleanup, and storing labeled meals in your fridge.
 
-• Each week, if you have any special requests or edits to your weekly plan, please inform your chef by Thursday at 10pm.
-• Your chef will send you a custom menu every Friday by 5pm. You'll confirm your selections by Sunday evening at 5pm, and your invoice will follow on Monday for the upcoming week of service.
-• That week on your scheduled cook date, your chef will come to your home and prepare all your menu selections, neatly packaging them and storing them in your fridge for you!`
+Special requests, changes, and accommodations are always welcome.
+
+Service plans are tailored to your household size, schedule, and goals. Details like menu timing and communication are established during onboarding.`
         },
         {
           q: 'Can I request meals for specific dietary goals?',
           a: `Absolutely. Your assigned chef will tailor menus each week to align with your dietary goals and preferences - whether you're looking for gluten-free, vegetarian, vegan, low-fat, high-protein, or other common lifestyle approaches. All meals are designed specifically for you and can reflect ingredient preferences, sensitivities, and nutritional priorities.
 
 We aim to create food that is not only tailored to your needs, but also deeply enjoyable, well-balanced, nutrient-dense, and sustainably deliverable each week. If you're unsure whether your needs are a fit, feel free to contact us and ask!`
-        },
-        {
-          q: 'How far in advance do I choose my menu?',
-          a: `You will choose your menu each week between Friday and Sunday evenings for service the following week.
-
-Have a special request for the week? Let your chef know by Thursday at 10pm!`
         },
         {
           q: 'Do I need to be home when my chef arrives?',
@@ -92,18 +87,12 @@ Have a special request for the week? Let your chef know by Thursday at 10pm!`
           a: 'Yes, for existing clients only. If you need elevated meal prep or intimate full-service catering for a small private dinner party, weekend guests, travel support, or a celebration at home, just let us know. All special requests are subject to chef availability, so please let us know 2 weeks in advance if possible.'
         },
         {
-          q: 'Can I split service across two cook days per week?',
-          a: 'We offer optional split service for clients who require the volume or two cook dates per week or would like their food refreshed midweek. This option is ideal for larger households or clients who value smaller, more frequent prep sessions. Clients with split service can also receive a discounted rate! Let us know during onboarding if you&apos;d like to request this.'
-        },
-        {
           q: 'Which areas do you service?',
           a: 'We currently service all of the Portland OR and Vancouver WA metro areas.'
         },
         {
-          q: 'Can I choose my own menu?',
-          a: `You'll receive a curated menu every Friday and can approve, swap, or make requests by Sunday evening. We build your meals around your goals, preferences, and lifestyle.
-
-Have a special request for your upcoming menu? Let your chef know on Thursday by 10pm!`
+          q: 'Can I choose what\'s prepared?',
+          a: 'That\'s entirely up to you. Some clients prefer to review and approve menus each week; others simply share their preferences and let their chef handle everything. Your service works however you want it to.'
         }
       ]
     },
@@ -112,12 +101,9 @@ Have a special request for your upcoming menu? Let your chef know on Thursday by
       questions: [
         {
           q: 'What are the extra add-ons like? What is included?',
-          a: `Add-ons are optional and billed per serving in increments of 4–8. Add-on items are things like:
-
-• Breakfasts & small bites – chia pudding, overnight oats, egg muffins, frittatas, muffins, granola, etc.
-• Kid-favorite meals – compact, reheatable options like turkey meatballs, veggie mac, chicken tenders, sesame noodles, etc.
-
-Add-on options rotate weekly by default, but you can always request repeat favorites!`
+          a: 'Add-ons are optional extras like breakfast items, snacks, and kid-friendly meals.',
+          linkText: 'See our sample menus for examples.',
+          linkHref: '/sample-menus'
         },
         {
           q: 'How long will my weekly service take?',
@@ -246,6 +232,16 @@ Skipped weeks do not extend your contract term, and each client is allowed two s
                             <div className="px-6 pb-6">
                               <div className="text-espresso font-serif font-light">
                                 {formatText(faq.a)}
+                                {faq.linkText && faq.linkHref && (
+                                  <div className="mt-2">
+                                    <Link 
+                                      href={faq.linkHref} 
+                                      className="text-maple hover:text-maple/80 underline transition-colors"
+                                    >
+                                      {faq.linkText}
+                                    </Link>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           )}
